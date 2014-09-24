@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#778899">
+
+    <TextView
+        android:id="@+id/tv_net_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="网络视频"
+        android:textSize="30dp" />
+
+    <!-- 
+    http://192.168.3.144/hls/test/test.m3u8
+    file:/mnt/sdcard/Movies/stephen_zhou.ts 
+    http://nowtv.tvesou.com:4110/b/dptv.php?src=dptv&tvn=zjws&pwd=yuntutv&nwtime=1410314050&sign=681d508569e824d878b6c9e838093507 
+    http://10.48.114.12:8007/TV/0/00000001000000050000000000000001/1.m3u8
+    http://10.48.114.12:8007/TV/0/00000001000000050000000000000002/4.m3u8?StartTime=1410364800&EndTime=1410368400
+    -->
+    <EditText
+        android:id="@+id/et_net_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="http://vapptime.cntv.wscdns.com/cache/14_/seg0/index.m3u8" >
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/bt_net_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放" />
+
+    <TextView
+        android:id="@+id/tv_file_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本地视频" 
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/bt_select_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择文件" />
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="bg_fragment_tab">#DEDEDE</color>
+    <color name="tab_text_selected">#FF0000</color>
+    <color name="tab_text_normal">#000000</color>
+
+</resources>

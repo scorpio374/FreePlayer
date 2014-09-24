@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ScorpioPlayer</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="buffering">buffering</string>
+    
+    <string name="vitamio_name">Vitamio</string>
+    <string name="vitamio_init_decoders">Initializing decoders…</string>
+    <string name="vitamio_videoview_error_title">Cannot play video</string>
+    <string name="vitamio_videoview_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming to
+			this device.</string>
+    <string name="vitamio_videoview_error_text_unknown">Sorry, this video cannot be played.</string>
+    <string name="vitamio_videoview_error_button">OK</string>
+    <string name="mediacontroller_play_pause">Play/Pause</string>
+    
+    <string name="select_input_file">FFMpeg - please select input file</string>
+    <string name="processing">Converting . . .</string>
+    <string name="type_file">input file</string>
+    <string name="input_file_info">File info:</string>
+    <string name="convert">Convert</string>
+    <string name="delete_src_movie">Delete src movie</string>
+    <string name="label_bitrate">Select bitrate:</string>
+    <string name="label_input">No video selected</string>
+    <string name="label_frames">Frame rate:</string>
+    <string name="label_no_data">No data</string>
+    <string name="bitrate_128">Bitrate 128kb/s</string>
+    <string name="bitrate_512">Bitrate 512kb/s</string>
+    <string name="bitrate_1024">Bitrate 1024kb/s</string>
+    <string name="label_audio_rate">Audio rate:</string>
+    <string name="audiorate_16">Audiorate 16kb/s</string>
+    <string name="audiorate_32">Audiorate 32kb/s</string>
+    <string name="label_audio_chanels">Audio channels:</string>
+    <string name="audio_channels_1">1 audio channel</string>
+    <string name="audio_channels_2">2 audio channels</string>
+    <string name="framerate">13</string>
+	<!-- used between activities to pass input video path -->
+	<string name="input_file">Input_file</string>
+	<string name="player_menu_about">About</string>
+	<string name="player_menu_decode_audio">Decode audio</string>
+    
+</resources>

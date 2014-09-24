@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <android.support.v4.app.FragmentTabHost
+        android:id="@android:id/tabhost"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent" 
+    >
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/realtabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="0.0"  
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/bg_fragment_tab"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_channel"
+                    style="@style/tab_radiobutton"
+                    android:drawableTop="@drawable/tab_channel_icon_selector"
+                    android:text="频道" />
+
+                <RadioButton
+                    android:id="@+id/radio_find"
+                    style="@style/tab_radiobutton"
+                    android:drawableTop="@drawable/tab_find_icon_selector"
+                    android:text="发现"/>
+
+                <RadioButton
+                    android:id="@+id/radio_my"
+                    style="@style/tab_radiobutton"
+                    android:drawableTop="@drawable/tab_my_icon_selector"
+                    android:text="我的" />
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+    </android.support.v4.app.FragmentTabHost>
+
+
+</LinearLayout>
