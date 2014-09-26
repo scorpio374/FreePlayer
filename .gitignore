@@ -13,6 +13,9 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+bin/
+gen/
+.settings/
 
 # =========================
 # Operating System Files
@@ -20,10 +23,10 @@ $RECYCLE.BIN/
 
 # OSX
 # =========================
-
 .DS_Store
 .AppleDouble
 .LSOverride
+
 
 # Icon must ends with two \r.
 Icon
