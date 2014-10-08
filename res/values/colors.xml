@@ -4,5 +4,11 @@
     <color name="bg_fragment_tab">#DEDEDE</color>
     <color name="tab_text_selected">#FF0000</color>
     <color name="tab_text_normal">#000000</color>
+    <color name="bg_tab_channel_title">#FF7F00</color>
+    <color name="tab_channel_title_color">#FFFFFF</color>
+    <color name="bg_white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="line_gray">#8A8A8A</color>
 
 </resources>

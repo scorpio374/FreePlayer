@@ -50,12 +50,12 @@ public class PortalActivity extends FragmentActivity implements OnCheckedChangeL
 		FragmentTransaction ft = fm.beginTransaction();
 
 		//** Detaches the androidfragment if exists */
-		if (channel != null)
-			ft.detach(channel);
-		if (find != null)
-			ft.detach(find);
-		if (my != null)
-			ft.detach(my);
+//		if (channel != null)
+//			ft.detach(channel);
+//		if (find != null)
+//			ft.detach(find);
+//		if (my != null)
+//			ft.detach(my);
 		
 		switch (checkedId) {  
         case R.id.radio_channel:  
@@ -64,7 +64,7 @@ public class PortalActivity extends FragmentActivity implements OnCheckedChangeL
 			} else {
 				ft.attach(channel);
 			}
-        	mTabHost.setCurrentTabByTag("index");  
+        	mTabHost.setCurrentTabByTag("channel");  
             break;  
         case R.id.radio_find:  
         	if (find == null) {
@@ -86,6 +86,7 @@ public class PortalActivity extends FragmentActivity implements OnCheckedChangeL
         default:
         	break;
 		}
+		ft.commit();
 
 	}
 }

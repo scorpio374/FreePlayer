@@ -39,5 +39,7 @@
 	<string name="input_file">Input_file</string>
 	<string name="player_menu_about">About</string>
 	<string name="player_menu_decode_audio">Decode audio</string>
+	
+	<string name="tab_channel_name">中辉TV</string>
     
 </resources>

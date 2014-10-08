@@ -27,7 +27,7 @@
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
-      <!--       <intent-filter>
+<!--             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -45,8 +45,9 @@
         
         <activity
             android:name="tv.danmaku.ijk.media.demo.PortalActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name" >
-     <!-- 		 <intent-filter>
+     	<!-- 	 <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter> -->
@@ -59,6 +60,7 @@
         
 		 <activity
             android:name="tv.danmaku.ijk.media.app.PortalActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:label="@string/app_name" >
      		 <intent-filter>
      		    <action android:name="android.intent.action.MAIN" />

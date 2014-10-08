@@ -2,10 +2,83 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_white"
     android:orientation="vertical" >
     
-    <TextView 
-        android:text="tab channel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_tab_channel_title">
+        
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginBottom="10dp"
+	        android:text="@string/tab_channel_name"
+	        android:textSize="20sp"
+	        android:textColor="@color/tab_channel_title_color"/>
+	    
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="10dip"
+	        android:layout_marginBottom="10dip"
+	        android:layout_marginRight="10dip">
+	        
+	        <RadioButton 
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	      		android:padding="5dip"
+	            android:textColor="@color/white"
+	            android:textSize="15sp"
+	            android:button="@null"
+	            android:drawableLeft="@drawable/ic_yunbi_white"
+	            android:background="@android:color/transparent"
+	            android:gravity="center"
+	            android:text="27辉币>"/>
+	    </LinearLayout>
+	    
+    </LinearLayout>
+    
+   	<RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    
+       	<android.support.v4.view.ViewPager  
+       		android:id="@+id/viewPager"  
+       		android:layout_width="match_parent"  
+       		android:layout_height="wrap_content" /> 
+    
+         <LinearLayout 
+             android:id="@+id/channel_hot_group"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_marginBottom="30dip"
+             android:gravity="center_horizontal"
+             android:orientation="horizontal">
+         </LinearLayout>
+         
+	</RelativeLayout>
+	
+   	<GridView 
+   	    android:id="@+id/channel_box_gridview"
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content"
+   	    android:horizontalSpacing="1dp"
+   	    android:verticalSpacing="1dp"
+
+   	    android:padding="0dp"
+   	    android:numColumns="3">
+   	</GridView>
+   	
+  <!-- 	<TableLayout 
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content">
+   	    
+   	</TableLayout>
+    -->
 </LinearLayout>
