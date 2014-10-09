@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import tv.danmaku.ijk.media.app.adapter.ChannelBoxAdapter;
 import tv.danmaku.ijk.media.app.adapter.ProgramPagerAdapter;
 import tv.danmaku.ijk.media.app.bean.ChannelBoxBean;
+import tv.danmaku.ijk.media.app.widget.NoScrollGridView;
 import tv.danmaku.ijk.media.demo.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -55,7 +56,7 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 
 	private Context context;
 	private ProgramPagerAdapter pagerAdapter;
-	private GridView gridView;
+	private NoScrollGridView gridView;
 	private ChannelBoxAdapter channelBoxAdapter;
 	private List<ChannelBoxBean> mChannelBoxList;
 	
@@ -149,7 +150,8 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	}
 	
 	private void initGridView(View v){
-		gridView = (GridView)v.findViewById(R.id.channel_box_gridview);
+		gridView = (NoScrollGridView)v.findViewById(R.id.channel_box_gridview);
+		gridView.setHaveScrollbar(false);
 		mChannelBoxList = new ArrayList<ChannelBoxBean>();
 		
 		for(int i = 0; i < channelNameArray.length; i++){

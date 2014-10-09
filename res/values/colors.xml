@@ -12,5 +12,6 @@
     <color name="line_gray">#8A8A8A</color>
     <color name="bg_gray">#CFCFCF</color>
     <color name="text_color">#4A4A4A</color>
+    <color name="bg_my_title">#EE8262</color>
 
 </resources>

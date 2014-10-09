@@ -2,10 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_white"
     android:orientation="vertical" >
     
-    <TextView 
-        android:text="tab my"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+<!--        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_tab_title">
+        
+         <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="10dip"
+	        android:layout_marginTop="10dip"
+	        android:layout_marginBottom="10dip"
+	        android:text="用户中心"
+	        android:textSize="22sp"
+	        android:textColor="@color/tab_channel_title_color"/>
+         
+	</LinearLayout> -->
+    
+   <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@drawable/bg_person_page">
+       
+      <ImageView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/ic_not_login"
+           android:scaleType="fitXY"/>
+      
+  <!--         <ImageView 
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/my_demo02"
+           android:scaleType="fitXY"/> -->
+    
+
+   </RelativeLayout>
 </LinearLayout>

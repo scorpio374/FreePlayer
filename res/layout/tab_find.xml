@@ -22,15 +22,14 @@
 	        android:textSize="22sp"
 	        android:textColor="@color/tab_channel_title_color"/>
          
-         <ImageButton 
+         <Button 
              android:layout_width="wrap_content"
              android:layout_height="match_parent"
-             android:src="@drawable/ic_frg_search"
-	         android:layout_marginRight="10dip"
-	         android:layout_marginBottom="10dip"
-	         android:layout_marginTop="10dip"
-	         android:background="@null"
-             android:scaleType="fitXY"/>
+	         android:layout_marginRight="15dip"
+	         android:layout_marginBottom="12dip"
+	         android:layout_marginTop="12dip"
+	         android:padding="0dip"
+	         android:background="@drawable/ic_frg_search"/>
 	</LinearLayout>
 	
 	<RadioGroup
