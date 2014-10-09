@@ -45,5 +45,21 @@
         <item name="android:paddingTop">4dip</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
+    
+     <style name="FindButtonTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingTop">15dip</item>
+        <item name="android:paddingBottom">5dip</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+<!--           <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">15dp</item> -->
 
 </resources>

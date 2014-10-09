@@ -41,5 +41,6 @@
 	<string name="player_menu_decode_audio">Decode audio</string>
 	
 	<string name="tab_channel_name">中辉TV</string>
+	<string name="tab_find_name">发现</string>
     
 </resources>

@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- <tv.danmaku.ijk.media.app.widget.VerticalScrollLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollLayoutView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"> -->
+<!--  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">   --> 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,17 +17,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bg_tab_channel_title">
+        android:orientation="horizontal"
+        android:background="@color/bg_tab_title">
         
 	    <TextView 
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	        android:layout_marginLeft="10dp"
-	        android:layout_marginTop="10dp"
-	        android:layout_marginBottom="10dp"
+	        android:layout_marginLeft="10dip"
+	        android:layout_marginTop="10dip"
+	        android:layout_marginBottom="10dip"
 	        android:text="@string/tab_channel_name"
-	        android:textSize="20sp"
+	        android:textSize="22sp"
 	        android:textColor="@color/tab_channel_title_color"/>
 	    
 	    <LinearLayout 
@@ -45,7 +55,7 @@
     
    	<RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dip">
     
        	<android.support.v4.view.ViewPager  
        		android:id="@+id/viewPager"  
@@ -68,17 +78,23 @@
    	    android:id="@+id/channel_box_gridview"
    	    android:layout_width="match_parent"
    	    android:layout_height="wrap_content"
-   	    android:horizontalSpacing="1dp"
-   	    android:verticalSpacing="1dp"
-
-   	    android:padding="0dp"
+   	    android:layout_gravity="center"
+   	    android:horizontalSpacing="0.5dip"
+   	    android:verticalSpacing="0.5dip"
+		android:background="@color/bg_gray"
+		android:layout_marginBottom="55dip"
+		android:scrollbars="none"
+   	    android:padding="0.0dip"
+   	    android:cacheColorHint="#00000000"
+   	    android:listSelector="@null"
    	    android:numColumns="3">
    	</GridView>
    	
   <!-- 	<TableLayout 
    	    android:layout_width="match_parent"
    	    android:layout_height="wrap_content">
-   	    
    	</TableLayout>
     -->
 </LinearLayout>
+<!-- </ScrollView> -->
+<!--   </tv.danmaku.ijk.media.app.widget.VerticalScrollLayout> -->

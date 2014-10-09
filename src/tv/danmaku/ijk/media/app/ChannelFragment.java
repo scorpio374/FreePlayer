@@ -30,8 +30,8 @@ import android.widget.LinearLayout;
 public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	
 	protected static final int MSG_UPDATE_VIEWPAGER = 9000;
-	private static final long DELAY_PAGER_TIMER = 10*1000;
-	private static final long PERIOD_PAGER_TIMER = 10*1000;
+	private static final long DELAY_PAGER_TIMER = 7*1000;
+	private static final long PERIOD_PAGER_TIMER = 7*1000;
 	
 	/**
 	 * ViewPager
@@ -62,13 +62,15 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	private String[] channelNameArray = {
 			"热播频道","VIP频道","央视频道",
 			"卫视频道","体育频道","影视频道",
-			"卫视频道","体育频道","影视频道",
+			"游戏频道","教育频道","生活频道",
+			"资讯频道","地方频道","添加",
 			};
 	
 	private int[] channelDrawableArray = {
 			R.drawable.box_favourite,R.drawable.box_special,R.drawable.box_yangshi,
 			R.drawable.box_weishi,R.drawable.box_sport,R.drawable.box_movie,
-			R.drawable.box_weishi,R.drawable.box_sport,R.drawable.box_movie,
+			R.drawable.box_game,R.drawable.box_edu,R.drawable.box_life,
+			R.drawable.box_news,R.drawable.box_conties,R.drawable.box_more,
 	};
 
 	
