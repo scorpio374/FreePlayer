@@ -1,0 +1,8 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:30
+#EXT-X-VERSION:3
+#EXTINF:300,
+http://v.cctv.ccgslb.net/flash/live_back/nettv_zhejiang/zhejiang-2014-09-25-00-013.mp4
+#EXTINF:300,
+http://v.cctv.ccgslb.net/flash/live_back/nettv_zhejiang/zhejiang-2014-09-25-01-002.mp4
+#EXT-X-ENDLIST

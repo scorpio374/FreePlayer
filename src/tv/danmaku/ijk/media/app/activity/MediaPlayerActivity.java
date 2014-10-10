@@ -6,6 +6,7 @@ import java.net.URLDecoder;
 import tv.danmaku.ijk.media.app.bean.ChannelBean;
 import tv.danmaku.ijk.media.demo.R;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
+import tv.danmaku.ijk.media.player.IMediaPlayer.OnErrorListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnPreparedListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.OTTMediaPlayer;
@@ -193,13 +194,23 @@ public class MediaPlayerActivity extends Activity {
 		}
 	};
 	
+	private OnErrorListener mOnErrorListener = new OnErrorListener() {
+		
+		@Override
+		public boolean onError(IMediaPlayer mp, int what, int extra) {
+			// TODO Auto-generated method stub
+			Toast.makeText(MediaPlayerActivity.this, "onError~~~~", Toast.LENGTH_SHORT).show();
+			return false;
+		}
+	};
+	
 	private OnCompletionListener mOnCompletionListener = new OnCompletionListener() {
 		
 		@Override
 		public void onCompletion(IMediaPlayer mp) {
 			// TODO Auto-generated method stub
 			mBufferingIndicator.setVisibility(View.VISIBLE);
-			Toast.makeText(MediaPlayerActivity.this, "播放异常,3秒后重新请求~~~", Toast.LENGTH_LONG).show();
+			Toast.makeText(MediaPlayerActivity.this, "播放异常,3秒后重新请求~~~~", Toast.LENGTH_SHORT).show();
 			mHandler.sendEmptyMessageDelayed(MSG_PLAY_AGAIN, DELAY_PLAY_AGAIN);
 		}
 	};

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import tv.danmaku.ijk.media.app.AppConst;
 import tv.danmaku.ijk.media.app.activity.ChannelListActivity;
 import tv.danmaku.ijk.media.app.adapter.ChannelBoxAdapter;
 import tv.danmaku.ijk.media.app.adapter.ProgramPagerAdapter;
@@ -25,8 +26,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -62,13 +63,6 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	private NoScrollGridView gridView;
 	private ChannelBoxAdapter channelBoxAdapter;
 	private List<ChannelBoxBean> mChannelBoxList;
-	
-	private String[] channelNameArray = {
-			"热播频道","VIP频道","央视频道",
-			"卫视频道","体育频道","影视频道",
-			"游戏频道","教育频道","生活频道",
-			"资讯频道","地方频道","添加",
-			};
 	
 	private int[] channelDrawableArray = {
 			R.drawable.box_favourite,R.drawable.box_special,R.drawable.box_yangshi,
@@ -156,9 +150,9 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 		gridView = (NoScrollGridView)v.findViewById(R.id.channel_box_gridview);
 		mChannelBoxList = new ArrayList<ChannelBoxBean>();
 		
-		for(int i = 0; i < channelNameArray.length; i++){
+		for(int i = 0; i < AppConst.channelNameArray.length; i++){
 			ChannelBoxBean channelBoxBean = new ChannelBoxBean();
-			channelBoxBean.setBoxName(channelNameArray[i]);
+			channelBoxBean.setBoxName(AppConst.channelNameArray[i]);
 			channelBoxBean.setBoxResourceId(channelDrawableArray[i]);
 			mChannelBoxList.add(channelBoxBean);
 		}
@@ -237,11 +231,12 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	private OnItemClickListener mOnItemClickListener = new OnItemClickListener() {
 		
 		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+		public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 				long arg3) {
 			// TODO Auto-generated method stub
 			Log.d("Debug","onItemClick");
 			Intent intent = new Intent(context, ChannelListActivity.class);
+			intent.putExtra("channelType", position);
 			startActivity(intent);
 		}
 	};

@@ -1,0 +1,14 @@
+回看EPG获取方法：
+http://api.cntv.cn/epg/epginfo?serviceId=cbox&c=hunan&d=20140924
+http://vdn.apps.cntv.cn/api/liveback.do?channel=hunan&starttime=201409240525&endtime=201409240700
+
+CCTV1：
+http://vdn.apps.cntv.cn/api/liveback.do?channel=cctv1&starttime=201409250121&endtime=201409250153
+
+浙江卫视：
+201409250102 气象：
+http://vdn.apps.cntv.cn/api/liveback.do?channel=zhejiang&starttime=201409250102&endtime=201409250106
+http://v.cctv.ccgslb.net/flash/live_back/nettv_zhejiang/zhejiang-2014-09-25-01-002.mp4
+
+爸爸回答吧:
+http://vdn.apps.cntv.cn/api/liveback.do?channel=zhejiang&starttime=201409252202&endtime=201409252316
