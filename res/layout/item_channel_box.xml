@@ -13,6 +13,9 @@
         android:textColor="@color/text_color"
         android:background="@color/bg_white"
         android:drawableTop="@color/bg_white"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:clickable="false"
         android:padding="20dip"/>
 
 </LinearLayout>

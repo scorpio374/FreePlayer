@@ -1,10 +1,11 @@
-package tv.danmaku.ijk.media.app;
+package tv.danmaku.ijk.media.app.fragment;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import tv.danmaku.ijk.media.app.activity.ChannelListActivity;
 import tv.danmaku.ijk.media.app.adapter.ChannelBoxAdapter;
 import tv.danmaku.ijk.media.app.adapter.ProgramPagerAdapter;
 import tv.danmaku.ijk.media.app.bean.ChannelBoxBean;
@@ -13,6 +14,7 @@ import tv.danmaku.ijk.media.demo.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -23,7 +25,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -80,7 +83,7 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		Log.d("Debug","onCreateView");
-		View v = inflater.inflate(R.layout.tab_channel, null);
+		View v = inflater.inflate(R.layout.fragment_channel, null);
 		initViewPager(v);
 		initGridView(v);
 		return v;
@@ -151,7 +154,6 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	
 	private void initGridView(View v){
 		gridView = (NoScrollGridView)v.findViewById(R.id.channel_box_gridview);
-		gridView.setHaveScrollbar(false);
 		mChannelBoxList = new ArrayList<ChannelBoxBean>();
 		
 		for(int i = 0; i < channelNameArray.length; i++){
@@ -163,6 +165,7 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 			
 		channelBoxAdapter = new ChannelBoxAdapter(context,mChannelBoxList);
 		gridView.setAdapter(channelBoxAdapter);
+		gridView.setOnItemClickListener(mOnItemClickListener);
 		channelBoxAdapter.notifyDataSetChanged();
 	}
 
@@ -230,5 +233,17 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 			viewPager.setCurrentItem(count+1,true);
 		}
 	}
+	
+	private OnItemClickListener mOnItemClickListener = new OnItemClickListener() {
+		
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			// TODO Auto-generated method stub
+			Log.d("Debug","onItemClick");
+			Intent intent = new Intent(context, ChannelListActivity.class);
+			startActivity(intent);
+		}
+	};
 	
 }

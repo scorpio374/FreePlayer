@@ -1,5 +1,8 @@
 package tv.danmaku.ijk.media.app;
 
+import tv.danmaku.ijk.media.app.fragment.ChannelFragment;
+import tv.danmaku.ijk.media.app.fragment.FindFragment;
+import tv.danmaku.ijk.media.app.fragment.MyFragment;
 import tv.danmaku.ijk.media.demo.R;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

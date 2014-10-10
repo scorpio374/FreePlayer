@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.GridView;
 
 public class NoScrollGridView extends GridView {
-	private boolean haveScrollbar = true;
+	private boolean haveScrollbar = false;
 	
 	public NoScrollGridView(Context context) {
 		super(context);

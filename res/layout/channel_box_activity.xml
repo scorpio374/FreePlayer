@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:orientation="horizontal">
+        
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="7dip"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/titlebar_back"/>
+        
+	    <Button 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="10dip"
+	        android:layout_marginTop="10dip"
+	        android:layout_marginBottom="10dip"
+	        android:background="@null"
+	        android:text="卫视频道"
+	        android:textSize="20sp"
+	        android:textColor="@color/black"/>
+	    
+	     <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="7dip"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/ic_frg_search_black"/>
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/channel_box_listview" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/line_gray"
+	    android:dividerHeight="0.5dip"
+	    android:scrollbars="none"
+	    android:fadingEdge="none">
+    </ListView>
+
+</LinearLayout>

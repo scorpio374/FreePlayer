@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dip"
+    android:background="@color/bg_gray"
+    android:orientation="horizontal" >
+    
+    <RelativeLayout 
+        android:layout_width="165dip"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_backplay"/>
+        
+        <TextView 
+            android:id="@+id/tv_channel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+        	android:layout_centerHorizontal="true"
+            android:text="浙江卫视"
+            android:textColor="#333333"
+            android:textSize="24sp"/>
+        
+         <TextView 
+            android:id="@+id/tv_program_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:text="08:00~09:00"
+            android:textColor="#555555"
+            android:textSize="17sp"/>
+    </RelativeLayout>
+    
+    <Button
+        android:id="@+id/btn_program_play"
+        android:layout_width="wrap_content"
+        android:layout_height="130dip"
+        android:layout_marginTop="5dip" 
+        android:layout_marginBottom="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/channel_program01"/>
+    
+</LinearLayout>

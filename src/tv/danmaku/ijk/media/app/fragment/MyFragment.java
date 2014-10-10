@@ -1,4 +1,4 @@
-package tv.danmaku.ijk.media.app;
+package tv.danmaku.ijk.media.app.fragment;
 
 import tv.danmaku.ijk.media.demo.R;
 import android.app.Activity;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FindFragment extends Fragment{
+public class MyFragment extends Fragment{
 	
 	@Override
 	public void onAttach(Activity activity) {
@@ -20,7 +20,7 @@ public class FindFragment extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View v = inflater.inflate(R.layout.tab_find, null);
+		View v = inflater.inflate(R.layout.fragment_my, null);
 		return v;
 	}
 }
