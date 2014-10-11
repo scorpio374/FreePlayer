@@ -91,7 +91,7 @@ public class MediaController extends FrameLayout {
     private boolean mShowing;
     private boolean mDragging;
     private boolean mInstantSeeking = true;
-    private static final int sDefaultTimeout = 3000;
+    private static final int sDefaultTimeout = 5000;
     private static final int FADE_OUT = 1;
     private static final int SHOW_PROGRESS = 2;
     private boolean mFromXml = false;

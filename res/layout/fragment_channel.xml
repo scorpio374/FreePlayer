@@ -46,6 +46,7 @@
     </LinearLayout>
     
     <tv.danmaku.ijk.media.app.widget.PagerScrollView
+        android:id="@+id/channel_scrollview"
  	 	android:scrollbars="none" 
   		android:layout_width="match_parent" 
   		android:layout_height="match_parent" 

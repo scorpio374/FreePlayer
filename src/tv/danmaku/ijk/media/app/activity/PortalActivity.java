@@ -1,4 +1,4 @@
-package tv.danmaku.ijk.media.app;
+package tv.danmaku.ijk.media.app.activity;
 
 import tv.danmaku.ijk.media.app.fragment.ChannelFragment;
 import tv.danmaku.ijk.media.app.fragment.FindFragment;

@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ScrollView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -63,6 +64,9 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	private NoScrollGridView gridView;
 	private ChannelBoxAdapter channelBoxAdapter;
 	private List<ChannelBoxBean> mChannelBoxList;
+	private ScrollView scrollView;
+	private int scrollX = 0;
+	private int scrollY = 0;
 	
 	private int[] channelDrawableArray = {
 			R.drawable.box_favourite,R.drawable.box_special,R.drawable.box_yangshi,
@@ -78,8 +82,7 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 		// TODO Auto-generated method stub
 		Log.d("Debug","onCreateView");
 		View v = inflater.inflate(R.layout.fragment_channel, null);
-		initViewPager(v);
-		initGridView(v);
+		initView(v);
 		return v;
 	}
 	
@@ -97,6 +100,36 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
+	}
+	
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		Log.d("Debug","onResume:"+scrollX+" "+scrollY);
+//		scrollView.smoothScrollTo(scrollX, scrollY);
+//		scrollView.scrollTo(scrollX, scrollY);
+//		scrollView.post(new Runnable() {   
+//		    public void run() {  
+//		    	scrollView.scrollTo(scrollX, scrollY);  
+//		    }   
+//		});  
+		super.onResume();
+	}
+	
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		Log.d("Debug","onPause");
+//		scrollX = scrollView.getScrollX();
+//		scrollY = scrollView.getScrollY();
+//		Log.d("Debug","scrollX:"+scrollX+" scrollY:"+scrollY);
+		super.onPause();
+	}
+	
+	private void initView(View v){
+		scrollView = (ScrollView)v.findViewById(R.id.channel_scrollview);
+		initViewPager(v);
+		initGridView(v);
 	}
 	
 	private void initViewPager(View v) {

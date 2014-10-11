@@ -5,12 +5,13 @@ import java.net.URLDecoder;
 
 import tv.danmaku.ijk.media.app.bean.ChannelBean;
 import tv.danmaku.ijk.media.demo.R;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnErrorListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnPreparedListener;
-import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.OTTMediaPlayer;
 import tv.danmaku.ijk.media.widget.MediaController;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ import android.widget.Toast;
 public class MediaPlayerActivity extends Activity {
 	private static final int MSG_HIDE_MEDIACONTROL = 9000;
 	private static final int MSG_PLAY_AGAIN = 9001;
-	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
+//	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
 	private static final long DELAY_PLAY_AGAIN = 3000;
 	private OTTMediaPlayer mMediaPlayer;
 	private View mBufferingIndicator;
@@ -65,6 +66,7 @@ public class MediaPlayerActivity extends Activity {
 		mMediaPlayer.setMediaBufferingIndicator(mBufferingIndicator);
 		mMediaPlayer.setOnPreparedListener(mOnPreparedListener);
 		mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
+		mMediaPlayer.setOnErrorListener(mOnErrorListener);
 		mSurfaceView.setOnClickListener(mSurfaceViewOnClickListener);
 		
 		ChannelBean channelBean = getIntentData();
@@ -166,6 +168,7 @@ public class MediaPlayerActivity extends Activity {
 		mMediaController.hide();
 	}
 	
+	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler(){
 		@Override
 		public void handleMessage(Message msg) {
@@ -199,7 +202,7 @@ public class MediaPlayerActivity extends Activity {
 		@Override
 		public boolean onError(IMediaPlayer mp, int what, int extra) {
 			// TODO Auto-generated method stub
-			Toast.makeText(MediaPlayerActivity.this, "onError~~~~", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(MediaPlayerActivity.this, "onError~~~~", Toast.LENGTH_SHORT).show();
 			return false;
 		}
 	};
