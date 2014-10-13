@@ -4,12 +4,15 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 import tv.danmaku.ijk.media.app.bean.ChannelBean;
+import tv.danmaku.ijk.media.app.util.NetworkSpeed;
 import tv.danmaku.ijk.media.demo.R;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnErrorListener;
+import tv.danmaku.ijk.media.player.IMediaPlayer.OnInfoListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnPreparedListener;
 import tv.danmaku.ijk.media.player.OTTMediaPlayer;
+import tv.danmaku.ijk.media.widget.DebugLog;
 import tv.danmaku.ijk.media.widget.MediaController;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -27,8 +30,11 @@ import android.widget.Toast;
 public class MediaPlayerActivity extends Activity {
 	private static final int MSG_HIDE_MEDIACONTROL = 9000;
 	private static final int MSG_PLAY_AGAIN = 9001;
+	protected static final int MSG_NETWORK_SPEED = 9002;
+	protected static final int MSG_BUFFER_TIMEOUT = 9003;
 //	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
 	private static final long DELAY_PLAY_AGAIN = 3000;
+	private static final long TIMEOUT_BUFFERING = 15*1000;
 	private OTTMediaPlayer mMediaPlayer;
 	private View mBufferingIndicator;
 	private MediaController mMediaController;
@@ -42,7 +48,7 @@ public class MediaPlayerActivity extends Activity {
 
 		initView();
 		initParams();
-		play(url);
+//		play(url);
 	}
 	
 	@Override
@@ -50,6 +56,22 @@ public class MediaPlayerActivity extends Activity {
 		// TODO Auto-generated method stub
 		stop();
 		super.onStop();
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		mHandler.removeMessages(MSG_NETWORK_SPEED);
+		cancelBufferingTimeout();
+		super.onPause();
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+		mHandler.sendEmptyMessage(MSG_PLAY_AGAIN);
+		super.onResume();
 	}
 
 	private void initView() {
@@ -67,6 +89,7 @@ public class MediaPlayerActivity extends Activity {
 		mMediaPlayer.setOnPreparedListener(mOnPreparedListener);
 		mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
 		mMediaPlayer.setOnErrorListener(mOnErrorListener);
+		mMediaPlayer.setOnInfoListener(mOnInfoListener);
 		mSurfaceView.setOnClickListener(mSurfaceViewOnClickListener);
 		
 		ChannelBean channelBean = getIntentData();
@@ -95,16 +118,20 @@ public class MediaPlayerActivity extends Activity {
 	private void play(String url) {
 		// TODO Auto-generated method stub
 		if(mMediaPlayer != null){
+			cancelBufferingTimeout();
 			mSurfaceView.requestFocus();
 			mBufferingIndicator.setVisibility(View.VISIBLE);
 			mMediaPlayer.stopPlayback();
 			mMediaPlayer.setVideoPath(url);
 			mMediaPlayer.start();
 		}
+		
+		//for test
 	}
 	
 	private void stop(){
 		if(mMediaPlayer != null){
+			cancelBufferingTimeout();
 			mMediaPlayer.stopPlayback();
 		}
 	}
@@ -168,6 +195,15 @@ public class MediaPlayerActivity extends Activity {
 		mMediaController.hide();
 	}
 	
+	private void checkBufferingTimeout(){
+		mHandler.removeMessages(MSG_BUFFER_TIMEOUT);
+		mHandler.sendEmptyMessageDelayed(MSG_BUFFER_TIMEOUT, TIMEOUT_BUFFERING);
+	}
+	
+	private void cancelBufferingTimeout(){
+		mHandler.removeMessages(MSG_BUFFER_TIMEOUT);
+	}
+	
 	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler(){
 		@Override
@@ -180,7 +216,18 @@ public class MediaPlayerActivity extends Activity {
 				
 			case MSG_PLAY_AGAIN:
 				play(url);
-
+				
+			case MSG_NETWORK_SPEED:
+				long speed = NetworkSpeed.getSpeed();
+				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
+				mHandler.removeMessages(MSG_NETWORK_SPEED);
+				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+				break;
+				
+			case MSG_BUFFER_TIMEOUT:
+				Toast.makeText(MediaPlayerActivity.this, "网络异常，缓冲超时，重新请求~~~~", Toast.LENGTH_SHORT).show();
+				play(url);
+				
 			default:
 				break;
 			}
@@ -207,6 +254,26 @@ public class MediaPlayerActivity extends Activity {
 		}
 	};
 	
+	private OnInfoListener mOnInfoListener = new OnInfoListener() {
+		
+		@Override
+		public boolean onInfo(IMediaPlayer mp, int what, int extra) {
+			// TODO Auto-generated method stub
+		      if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_START) {
+                  if (mBufferingIndicator != null){
+                	  mBufferingIndicator.setVisibility(View.VISIBLE);
+                	  checkBufferingTimeout();
+                  } 
+              } else if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_END) {
+                  if (mBufferingIndicator != null){
+                	  mBufferingIndicator.setVisibility(View.GONE);
+                	  cancelBufferingTimeout();
+                  }
+              }
+			return true;
+		}
+	};
+	
 	private OnCompletionListener mOnCompletionListener = new OnCompletionListener() {
 		
 		@Override
@@ -217,4 +284,5 @@ public class MediaPlayerActivity extends Activity {
 			mHandler.sendEmptyMessageDelayed(MSG_PLAY_AGAIN, DELAY_PLAY_AGAIN);
 		}
 	};
+	
 }

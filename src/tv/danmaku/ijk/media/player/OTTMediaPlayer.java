@@ -454,13 +454,11 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
                 if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_START) {
                     DebugLog.dfmt(TAG, "onInfo: (MEDIA_INFO_BUFFERING_START)");
                     if (mMediaBufferingIndicator != null){
-                    	Log.d("TQ","mMediaBufferingIndicator set VISIBLE");
                         mMediaBufferingIndicator.setVisibility(View.VISIBLE);
                     } 
                 } else if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_END) {
                     DebugLog.dfmt(TAG, "onInfo: (MEDIA_INFO_BUFFERING_END)");
                     if (mMediaBufferingIndicator != null){
-                    	Log.d("TQ","mMediaBufferingIndicator set GONE");
                         mMediaBufferingIndicator.setVisibility(View.GONE);
                     }
                 }
