@@ -5,7 +5,7 @@
     android:background="@color/bg_white"
     android:orientation="vertical" >
     
-<!--        <LinearLayout
+       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -22,9 +22,111 @@
 	        android:textSize="22sp"
 	        android:textColor="@color/tab_channel_title_color"/>
          
-	</LinearLayout> -->
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:orientation="vertical">
+        
+        <LinearLayout 
+       	 	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:background="@color/bg_gray">
+	       <ImageView
+	           android:id="@+id/img_login"
+	           android:layout_width="wrap_content"
+	           android:layout_height="match_parent"
+	           android:src="@drawable/ic_not_login"
+	           android:scaleType="fitXY"/>
+       </LinearLayout>
+       <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+         
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/my_item_button"
+            android:text="用户登陆"
+            android:textSize="20sp"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+        
+       <Button
+           	android:id="@+id/btn_history"
+			style="@style/my_item_button"
+            android:text="观看记录"
+            android:textSize="20sp"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+        
+       <Button
+            android:id="@+id/btn_store"
+			style="@style/my_item_button"
+            android:text="收藏频道"
+            android:textSize="20sp"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+        
+       <Button
+			android:id="@+id/btn_order"
+			style="@style/my_item_button"
+            android:text="预约节目"
+            android:textSize="20sp"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>   
+            
+       <Button
+			android:id="@+id/btn_recommend"
+			style="@style/my_item_button"
+            android:text="精品推荐"
+            android:textSize="20sp"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+        
+ 		<Button
+ 		    android:id="@+id/btn_custom"
+			style="@style/my_item_button"
+            android:text="自定义"
+            android:textSize="20sp"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+    </LinearLayout>
     
-   <RelativeLayout 
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/bg_white"
+        android:orientation="vertical">
+      
+        <Button
+			android:id="@+id/btn_local_movie"
+			style="@style/my_item_button"
+            android:text="本地视频"
+            android:textSize="25sp"
+            android:textColor="@color/text_blue"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/line_gray"/>
+    </LinearLayout>
+    
+<!--    <RelativeLayout 
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:background="@drawable/bg_person_page">
@@ -35,12 +137,11 @@
            android:src="@drawable/ic_not_login"
            android:scaleType="fitXY"/>
       
-  <!--         <ImageView 
+          <ImageView 
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:src="@drawable/my_demo02"
-           android:scaleType="fitXY"/> -->
-    
-
-   </RelativeLayout>
+           android:scaleType="fitXY"/>
+   </RelativeLayout> -->
+   
 </LinearLayout>

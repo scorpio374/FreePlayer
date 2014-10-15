@@ -23,5 +23,7 @@ public class FindFragment extends Fragment{
 		View v = inflater.inflate(R.layout.fragment_find, null);
 		return v;
 	}
+	
 }
+	
 

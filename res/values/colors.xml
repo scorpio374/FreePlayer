@@ -13,5 +13,7 @@
     <color name="bg_gray">#CFCFCF</color>
     <color name="text_color">#4A4A4A</color>
     <color name="bg_my_title">#EE8262</color>
+    <color name="text_blue">#0000FF</color>
+    <color name="eye_help">#C8ECCC</color>
 
 </resources>

@@ -1,6 +1,7 @@
 package tv.danmaku.ijk.media.demo;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -55,7 +56,17 @@ public class FFMpegFileExplorer extends ListActivity {
 			mTextViewLocation.setText("Location: " + dirPath);
 	
 			File f = new File(dirPath);
-			File[] temp = f.listFiles();
+			File[] temp = f.listFiles(new FileFilter() {
+				
+				@Override
+				public boolean accept(File file) {
+					// TODO Auto-generated method stub
+					if(file.getName().startsWith(".")){
+						return false;
+					}
+					return true;
+				}
+			});
 			
 			sortFilesByDirectory(temp);
 			
@@ -65,6 +76,7 @@ public class FFMpegFileExplorer extends ListActivity {
 				System.arraycopy(temp, 0, files, 1, temp.length);
 				files[0] = new File(f.getParent());
 			} else {
+				
 				files = temp;
 			}
 			

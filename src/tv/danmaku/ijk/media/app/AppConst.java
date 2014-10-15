@@ -21,6 +21,7 @@ public class AppConst {
 /*	{"浙江卫视回放","http://yvhynjw.xicp.net:50594/zhejiang.m3u8"},*/
 
 	public static String[][] cctvChannelMap = {
+		{"iHome-CCTV-1","http://scgd-m3u8.3atv.cn:10009/m3u8/m3u8?id=134100&version=1&rate=400k"},
 		{"CCTV-1","http://vapptime.cntv.wscdns.com/cache/14_/seg0/index.m3u8"},
 		{"CCTV-2","http://vapptime.cntv.wscdns.com/cache/204_/seg0/index.m3u8"},
 		{"CCTV-3","http://vapptime.cntv.wscdns.com/cache/209_/seg0/index.m3u8"},

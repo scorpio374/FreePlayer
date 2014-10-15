@@ -30,16 +30,16 @@ import android.widget.Toast;
 public class MediaPlayerActivity extends Activity {
 	private static final int MSG_HIDE_MEDIACONTROL = 9000;
 	private static final int MSG_PLAY_AGAIN = 9001;
-	protected static final int MSG_NETWORK_SPEED = 9002;
-	protected static final int MSG_BUFFER_TIMEOUT = 9003;
-//	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
+	private static final int MSG_NETWORK_SPEED = 9002;
+	private static final int MSG_BUFFER_TIMEOUT = 9003;
+	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
 	private static final long DELAY_PLAY_AGAIN = 3000;
 	private static final long TIMEOUT_BUFFERING = 15*1000;
 	private OTTMediaPlayer mMediaPlayer;
 	private View mBufferingIndicator;
 	private MediaController mMediaController;
 	private SurfaceView mSurfaceView;
-	private String url;
+	private String mUrl;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class MediaPlayerActivity extends Activity {
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
-		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+//		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
 		mHandler.sendEmptyMessage(MSG_PLAY_AGAIN);
 		super.onResume();
 	}
@@ -93,15 +93,21 @@ public class MediaPlayerActivity extends Activity {
 		mSurfaceView.setOnClickListener(mSurfaceViewOnClickListener);
 		
 		ChannelBean channelBean = getIntentData();
-		String path = channelBean.getUrl();
-		url = doUrlDecoder(path);
+		if(channelBean != null){
+			String path = channelBean.getUrl();
+			mUrl = doUrlDecoder(path);
+		}else{
+			Intent intent = getIntent();
+			String path = intent.getDataString().toString();
+			mUrl = doUrlDecoder(path);
+		}
 	}
 	
 	private String doUrlDecoder(String path){
 		try {
-			Log.d("Debug", "url orgcode:"+url);
+			Log.d("Debug", "url orgcode:"+mUrl);
 			path = URLDecoder.decode(path, "utf-8");
-			Log.d("Debug", "url decode:"+url);
+			Log.d("Debug", "url decode:"+mUrl);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -215,18 +221,19 @@ public class MediaPlayerActivity extends Activity {
 				break;
 				
 			case MSG_PLAY_AGAIN:
-				play(url);
+				play(mUrl);
 				
 			case MSG_NETWORK_SPEED:
-				long speed = NetworkSpeed.getSpeed();
-				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
-				mHandler.removeMessages(MSG_NETWORK_SPEED);
-				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+//				long speed = NetworkSpeed.getSpeed();
+//				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
+//				mHandler.removeMessages(MSG_NETWORK_SPEED);
+//				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
 				break;
 				
 			case MSG_BUFFER_TIMEOUT:
 				Toast.makeText(MediaPlayerActivity.this, "网络异常，缓冲超时，重新请求~~~~", Toast.LENGTH_SHORT).show();
-				play(url);
+				Log.e("Debug","MSG_BUFFER_TIMEOUT，缓冲超时，重新请求~~~~");
+				play(mUrl);
 				
 			default:
 				break;
