@@ -84,7 +84,7 @@ public class ChannelListActivity extends Activity{
 		
 		mChannelBeanList = new ArrayList<ChannelBean>();
 		channelNum = channelMap.length;
-		for(int i = 0; i < 15; i++){
+		for(int i = 0; i < 20; i++){
 			int channelIndex = i % channelNum;
 			ChannelBean channelBean = new ChannelBean();
 			channelBean.setChannelName(channelMap[channelIndex][0]);

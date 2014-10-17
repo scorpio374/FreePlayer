@@ -31,6 +31,10 @@ public interface IMediaPlayer {
     public static final int MEDIA_ERROR_MALFORMED = -1007;
     public static final int MEDIA_ERROR_UNSUPPORTED = -1010;
     public static final int MEDIA_ERROR_TIMED_OUT = -110;
+    
+	public static final int MEDIAPLAYER_TYPE_IJK = 0;
+	public static final int MEDIAPLAYER_TYPE_ANDROID = 1;
+	public static final int MEDIAPLAYER_TYPE_TV = 2;
 
     public abstract void setDisplay(SurfaceHolder sh);
 

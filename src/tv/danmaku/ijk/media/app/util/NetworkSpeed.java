@@ -31,4 +31,8 @@ public class NetworkSpeed {
 		lastRxBytes = totalRxBytes;
 		return speed;
 	}
+	
+	public static long getUidRxBytes(int uid){
+		return TrafficStats.getUidRxBytes(uid)==TrafficStats.UNSUPPORTED?0:(TrafficStats.getUidRxBytes(uid)/1024);
+	}
 }

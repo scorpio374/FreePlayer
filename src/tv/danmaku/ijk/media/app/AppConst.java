@@ -22,6 +22,7 @@ public class AppConst {
 
 	public static String[][] cctvChannelMap = {
 		{"iHome-CCTV-1","http://scgd-m3u8.3atv.cn:10009/m3u8/m3u8?id=134100&version=1&rate=400k"},
+		{"iHome-CCTV-1-回放","http://scgd-m3u8.3atv.cn:10009/m3u8/m3u8?begintime=1413421680&duration=1080&mode=11&id=134100&version=1&rate=400k"},
 		{"CCTV-1","http://vapptime.cntv.wscdns.com/cache/14_/seg0/index.m3u8"},
 		{"CCTV-2","http://vapptime.cntv.wscdns.com/cache/204_/seg0/index.m3u8"},
 		{"CCTV-3","http://vapptime.cntv.wscdns.com/cache/209_/seg0/index.m3u8"},

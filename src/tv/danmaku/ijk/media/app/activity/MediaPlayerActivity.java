@@ -12,11 +12,13 @@ import tv.danmaku.ijk.media.player.IMediaPlayer.OnErrorListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnInfoListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnPreparedListener;
 import tv.danmaku.ijk.media.player.OTTMediaPlayer;
-import tv.danmaku.ijk.media.widget.DebugLog;
 import tv.danmaku.ijk.media.widget.MediaController;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -69,7 +71,7 @@ public class MediaPlayerActivity extends Activity {
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
-//		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
 		mHandler.sendEmptyMessage(MSG_PLAY_AGAIN);
 		super.onResume();
 	}
@@ -105,9 +107,8 @@ public class MediaPlayerActivity extends Activity {
 	
 	private String doUrlDecoder(String path){
 		try {
-			Log.d("Debug", "url orgcode:"+mUrl);
 			path = URLDecoder.decode(path, "utf-8");
-			Log.d("Debug", "url decode:"+mUrl);
+			Log.d("Debug", "url decode:"+path);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -224,10 +225,19 @@ public class MediaPlayerActivity extends Activity {
 				play(mUrl);
 				
 			case MSG_NETWORK_SPEED:
-//				long speed = NetworkSpeed.getSpeed();
-//				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
-//				mHandler.removeMessages(MSG_NETWORK_SPEED);
-//				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+				PackageManager pm = getPackageManager();
+				ApplicationInfo ai = null;
+				try {
+					ai = pm.getApplicationInfo("tv.danmaku.ijk.media.demo", PackageManager.GET_ACTIVITIES);
+				} catch (NameNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				int uid = ai.uid;
+				long speed = NetworkSpeed.getUidRxBytes(uid);
+				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
+				mHandler.removeMessages(MSG_NETWORK_SPEED);
+				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
 				break;
 				
 			case MSG_BUFFER_TIMEOUT:

@@ -5,6 +5,7 @@ import java.io.FileFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import tv.danmaku.ijk.media.app.activity.MediaPlayerActivity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.net.Uri;
@@ -122,7 +123,8 @@ public class FFMpegFileExplorer extends ListActivity {
 //        startActivity(localIntent);
 		
 		Uri netUri = Uri.parse(filePath.trim());
-		Intent netIntent = new Intent(this, VideoPlayerActivity.class);
+//		Intent netIntent = new Intent(this, VideoPlayerActivity.class);
+		Intent netIntent = new Intent(this, MediaPlayerActivity.class);
 		netIntent.setData(netUri);
 		startActivity(netIntent);
     }

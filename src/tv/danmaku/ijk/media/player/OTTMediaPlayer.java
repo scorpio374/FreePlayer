@@ -104,9 +104,7 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
     private boolean mCanSeekForward = true;
     private Context mContext;
     private SurfaceView mSurfaceView = null;
-    private int mWindowWidth = 0;
-    private int mWindowHeight = 0;
-    private boolean firstPlay = true;
+    private int mMediaPlayerType = IMediaPlayer.MEDIAPLAYER_TYPE_IJK;
 
     public OTTMediaPlayer(Context context, SurfaceView surfaceView) {
         initVideoView(context,surfaceView);
@@ -129,7 +127,6 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
 		mCurrentState = STATE_IDLE;
 		mTargetState = STATE_IDLE;
 		if (ctx instanceof Activity){
-			Log.d("TQ", "VideoView set stream music");
 		    ((Activity) ctx).setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		}
 	  }
@@ -140,9 +137,6 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
     	
     	if(mMediaPlayer != null)
     		mMediaPlayer.setDisplay(sh);
-    	else{
-    		Log.d("TQ","mMediaPlay is null");
-    	}
     }
     
     public void setMediaController(MediaController controller) {
@@ -155,9 +149,6 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
     public void setMediaBufferingIndicator(View mediaBufferingIndicator) {
         if (mMediaBufferingIndicator != null)
             mMediaBufferingIndicator.setVisibility(View.GONE);
-        if(mediaBufferingIndicator == null){
-        	Log.d("TQ","mediaBufferingIndicator is null---------------------");
-        }
         mMediaBufferingIndicator = mediaBufferingIndicator;
     }
 
@@ -187,7 +178,6 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
         }
     }
     
-	
 	public void setVideoLayout(int layout) {
         if (mVideoHeight > 0 && mVideoWidth > 0) {
             LayoutParams lp = mSurfaceView.getLayoutParams();
@@ -195,42 +185,8 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
             lp.height = mSurfaceHeight = mSurfaceView.getHeight();
 //            mSurfaceView.setLayoutParams(lp);
             mSurfaceHolder.setFixedSize(mSurfaceWidth, mSurfaceHeight);
-            Log.d("TQ","setVideoLayout width:"+mSurfaceWidth+" height:"+mSurfaceHeight);
-            
-            //just for test window channge fullscreenplay
-            if(firstPlay == true){
-            	firstPlay = false;
-            	mWindowWidth = mSurfaceWidth;
-            	mWindowHeight = mSurfaceHeight;
-            	Log.d("TQ","first setVideoLayout mWindowWidth:"+mSurfaceWidth+" mWindowHeight:"+mSurfaceHeight);
-            }
+            Log.d("Debug","setVideoLayout width:"+mSurfaceWidth+" height:"+mSurfaceHeight);
         }
-	}
-	
-	public void setFullScreen(){
-		LayoutParams lp = mSurfaceView.getLayoutParams();
-		DisplayMetrics disp = mContext.getResources().getDisplayMetrics();
-		lp.width = mSurfaceWidth = disp.widthPixels;
-		lp.height = mSurfaceHeight = disp.heightPixels;
-//		mSurfaceView.setLayoutParams(lp);
-		mSurfaceHolder.setFixedSize(mSurfaceWidth, mSurfaceHeight);
-		Log.d("TQ","setFullScreen width:"+mSurfaceWidth+" height:"+mSurfaceHeight);
-	}
-	
-	public void setWindowPlay(int width, int height){
-		LayoutParams lp = mSurfaceView.getLayoutParams();
-		if(width <= 0)
-			lp.width = mSurfaceWidth = mWindowWidth;
-		else 
-			lp.width = mSurfaceWidth = width;
-		
-		if(height <= 0)
-			lp.height = mSurfaceHeight = mWindowHeight;
-		else
-			lp.width = mSurfaceWidth = height;
-//			mSurfaceView.setLayoutParams(lp);
-		mSurfaceHolder.setFixedSize(mSurfaceWidth, mSurfaceHeight);
-		Log.d("TQ","setWindowPlay width:"+mSurfaceWidth+" height:"+mSurfaceHeight);
 	}
 	
 	private void attachMediaController() {
@@ -280,14 +236,14 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
                 mMediaPlayer.setDisplay(mSurfaceHolder);
                 resume();
             } else {
-            	Log.d("TQ","surfaceCreated openVideo");
+            	Log.d("Debug","surfaceCreated openVideo");
 //                openVideo();
             	//modify here
             }
         }
 
         public void surfaceDestroyed(SurfaceHolder holder) {
-        	Log.d("TQ","surfaceDestroyed");
+        	Log.d("Debug","surfaceDestroyed");
             mSurfaceHolder = null;
             if (mMediaController != null)
                 mMediaController.hide();
@@ -308,14 +264,19 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
         try {
             mDuration = -1;
             mCurrentBufferPercentage = 0;
-            // mMediaPlayer = new AndroidMediaPlayer();
-            IjkMediaPlayer ijkMediaPlayer = null;
-            if (mUri != null) {
-                ijkMediaPlayer = new IjkMediaPlayer();
-                ijkMediaPlayer.setAvOption(AvFormatOption_HttpDetectRangeSupport.Disable);
-                ijkMediaPlayer.setOverlayFormat(AvFourCC.SDL_FCC_RV32);
+            if(mMediaPlayerType == IMediaPlayer.MEDIAPLAYER_TYPE_ANDROID){
+            	Log.d("Debug","use android mediaplayer:"+mUri.toString());
+            	mMediaPlayer = new AndroidMediaPlayer();
+            }else if(mMediaPlayerType == IMediaPlayer.MEDIAPLAYER_TYPE_IJK){
+	            IjkMediaPlayer ijkMediaPlayer = null;
+	            if (mUri != null) {
+	                ijkMediaPlayer = new IjkMediaPlayer();
+	                ijkMediaPlayer.setAvOption(AvFormatOption_HttpDetectRangeSupport.Disable);
+	                ijkMediaPlayer.setOverlayFormat(AvFourCC.SDL_FCC_RV32);
+	            }
+	            Log.d("Debug","use ijk mediaplayer:"+mUri.toString());
+	            mMediaPlayer = ijkMediaPlayer;
             }
-            mMediaPlayer = ijkMediaPlayer;
             mMediaPlayer.setOnPreparedListener(mPreparedListener);
             mMediaPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
             mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -351,7 +312,7 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
     OnVideoSizeChangedListener mSizeChangedListener = new OnVideoSizeChangedListener() {
         public void onVideoSizeChanged(IMediaPlayer mp, int width, int height,
                 int sarNum, int sarDen) {
-            DebugLog.dfmt("TQ", "onVideoSizeChanged: (%dx%d)", width, height);
+            DebugLog.dfmt("Debug", "onVideoSizeChanged: (%dx%d)", width, height);
             mVideoWidth = mp.getVideoWidth();
             mVideoHeight = mp.getVideoHeight();
             mVideoSarNum = sarNum;
@@ -363,7 +324,7 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
 
     OnPreparedListener mPreparedListener = new OnPreparedListener() {
         public void onPrepared(IMediaPlayer mp) {
-            DebugLog.d("TQ", "onPrepared");
+            DebugLog.d("Debug", "onPrepared");
             mCurrentState = STATE_PREPARED;
             mTargetState = STATE_PLAYING;
 
@@ -383,11 +344,13 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
                 if (mSurfaceWidth == mVideoWidth
                         && mSurfaceHeight == mVideoHeight) {
                     if (mTargetState == STATE_PLAYING) {
+                    	DebugLog.d("Debug", "onPrepared start()");
                         start();
                         if (mMediaController != null)
                             mMediaController.show();
                     } else if (!isPlaying()
                             && (seekToPosition != 0 || getCurrentPosition() > 0)) {
+                    	DebugLog.d("Debug", "onPrepared isPlaying");
                         if (mMediaController != null)
                             mMediaController.show(0);
                     }
@@ -452,12 +415,10 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
                 mOnInfoListener.onInfo(mp, what, extra);
             } else if (mMediaPlayer != null) {
                 if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_START) {
-                    DebugLog.dfmt(TAG, "onInfo: (MEDIA_INFO_BUFFERING_START)");
                     if (mMediaBufferingIndicator != null){
                         mMediaBufferingIndicator.setVisibility(View.VISIBLE);
                     } 
                 } else if (what == IMediaPlayer.MEDIA_INFO_BUFFERING_END) {
-                    DebugLog.dfmt(TAG, "onInfo: (MEDIA_INFO_BUFFERING_END)");
                     if (mMediaBufferingIndicator != null){
                         mMediaBufferingIndicator.setVisibility(View.GONE);
                     }
@@ -514,10 +475,10 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
 
     public void toggleMediaControlsVisiblity() {
         if (mMediaController.isShowing()) {
-        	Log.d("TQ","mMediaController hide");
+        	Log.d("Debug","mMediaController hide");
             mMediaController.hide();
         } else {
-        	Log.d("TQ","mMediaController show");
+        	Log.d("Debug","mMediaController show");
             mMediaController.show();
         }
     }
