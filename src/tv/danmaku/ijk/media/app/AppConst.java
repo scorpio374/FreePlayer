@@ -9,6 +9,9 @@ public class AppConst {
 			};
 	
 	public static String[][] localChannelMap = {
+//		{"时移测试","http://124.161.62.197:9000/TV/0/00000000000000050000000000000014/9.m3u8?bitrate=auto&tvodstarttime=1410364800&tvodendtime=1410368400"},
+		{"时移测试","http://124.161.62.197:9000/TV/0/00000000000000050000000000000014/9.m3u8?bitrate=auto"},
+		{"本地时移测试","http://192.168.3.144/hls/test/test.m3u8"},
 		{"湖南卫视","http://url.52itv.cn/vlive/pptv/hnws.m3u8"},
 		{"浙江卫视","http://vapptime.cntv.wscdns.com/cache/64_/seg0/index.m3u8"},
 		{"江苏卫视","http://219.232.160.143:5080/hls/2ae90f52c9d90a319d6dcaadeb49844a.m3u8"},

@@ -71,7 +71,7 @@ public class MediaPlayerActivity extends Activity {
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
-		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+//		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
 		mHandler.sendEmptyMessage(MSG_PLAY_AGAIN);
 		super.onResume();
 	}
@@ -225,19 +225,19 @@ public class MediaPlayerActivity extends Activity {
 				play(mUrl);
 				
 			case MSG_NETWORK_SPEED:
-				PackageManager pm = getPackageManager();
-				ApplicationInfo ai = null;
-				try {
-					ai = pm.getApplicationInfo("tv.danmaku.ijk.media.demo", PackageManager.GET_ACTIVITIES);
-				} catch (NameNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				int uid = ai.uid;
-				long speed = NetworkSpeed.getUidRxBytes(uid);
-				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
-				mHandler.removeMessages(MSG_NETWORK_SPEED);
-				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
+//				PackageManager pm = getPackageManager();
+//				ApplicationInfo ai = null;
+//				try {
+//					ai = pm.getApplicationInfo("tv.danmaku.ijk.media.demo", PackageManager.GET_ACTIVITIES);
+//				} catch (NameNotFoundException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//				int uid = ai.uid;
+//				long speed = NetworkSpeed.getUidRxBytes(uid);
+//				Toast.makeText(MediaPlayerActivity.this, "speed:"+speed+"/kbs", Toast.LENGTH_SHORT).show();
+//				mHandler.removeMessages(MSG_NETWORK_SPEED);
+//				mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
 				break;
 				
 			case MSG_BUFFER_TIMEOUT:
