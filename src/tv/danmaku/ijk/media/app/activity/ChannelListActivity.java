@@ -102,7 +102,7 @@ public class ChannelListActivity extends Activity{
 			// TODO Auto-generated method stub
 			int position = Integer.parseInt(view.getTag().toString());
 			ChannelBean channelBean = mChannelBeanList.get(position);
-			Intent intent = new Intent(ChannelListActivity.this, MediaPlayerActivity.class);
+			Intent intent = new Intent(ChannelListActivity.this, TVPlayerActivity.class);
 			Bundle bundle = new Bundle();
 			bundle.putSerializable("channel", channelBean);
 			intent.putExtras(bundle);

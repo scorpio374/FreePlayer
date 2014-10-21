@@ -4,7 +4,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 import tv.danmaku.ijk.media.app.bean.ChannelBean;
-import tv.danmaku.ijk.media.app.util.NetworkSpeed;
+import tv.danmaku.ijk.media.app.util.M3u8Manager;
+import tv.danmaku.ijk.media.app.util.M3u8Manager.OnCompletionListerner;
 import tv.danmaku.ijk.media.demo.R;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
@@ -16,9 +17,6 @@ import tv.danmaku.ijk.media.widget.MediaController;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,27 +25,36 @@ import android.view.KeyEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MediaPlayerActivity extends Activity {
+public class TVPlayerActivity extends Activity {
 	private static final int MSG_HIDE_MEDIACONTROL = 9000;
-	private static final int MSG_PLAY_AGAIN = 9001;
+	private static final int MSG_PLAY_VIDEO = 9001;
 	private static final int MSG_NETWORK_SPEED = 9002;
 	private static final int MSG_BUFFER_TIMEOUT = 9003;
+	protected static final int MSG_M3U8_MANAGER = 9004;
 	
 	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
 	private static final long DELAY_PLAY_AGAIN = 3000;
 	private static final long TIMEOUT_BUFFERING = 15*1000;
+	
 	private OTTMediaPlayer mMediaPlayer;
 	private View mBufferingIndicator;
 	private MediaController mMediaController;
 	private SurfaceView mSurfaceView;
+	private String mPlayUrl;
 	private String mUrl;
+	private M3u8Manager mM3u8Manager;
+	
+	private Button backButton;
+	private Button forwardButton;
+	private Button pauseButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mediaplayer);
+		setContentView(R.layout.tvplayer);
 
 		initView();
 		initParams();
@@ -64,8 +71,9 @@ public class MediaPlayerActivity extends Activity {
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
-		mHandler.removeMessages(MSG_NETWORK_SPEED);
+//		mHandler.removeMessages(MSG_NETWORK_SPEED);
 		cancelBufferingTimeout();
+		stopRequestM3u8();
 		super.onPause();
 	}
 	
@@ -73,7 +81,9 @@ public class MediaPlayerActivity extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 //		mHandler.sendEmptyMessageDelayed(MSG_NETWORK_SPEED,1000);
-		mHandler.sendEmptyMessage(MSG_PLAY_AGAIN);
+//		if(!mMediaPlayer.isPlaying())
+//			mHandler.sendEmptyMessage(MSG_PLAY_AGAIN);
+//		startRequestM3u8(mUrl);
 		super.onResume();
 	}
 
@@ -82,6 +92,10 @@ public class MediaPlayerActivity extends Activity {
 		mBufferingIndicator = findViewById(R.id.buffering_indicator);
 		mSurfaceView = (SurfaceView)findViewById(R.id.mediaplayer_surfaceview);
 		mMediaController = new MediaController(this);
+		
+		backButton = (Button)findViewById(R.id.timeshift_back);
+		forwardButton = (Button)findViewById(R.id.timeshift_forward);
+		pauseButton = (Button)findViewById(R.id.timeshift_pause);
 	}
 	
 	private void initParams() {
@@ -94,16 +108,33 @@ public class MediaPlayerActivity extends Activity {
 		mMediaPlayer.setOnErrorListener(mOnErrorListener);
 		mMediaPlayer.setOnInfoListener(mOnInfoListener);
 		mSurfaceView.setOnClickListener(mSurfaceViewOnClickListener);
+		mM3u8Manager = new M3u8Manager(this);
+		mM3u8Manager.setOnCompeleteListerner(mOnM3u8CompletionListerner);
+		
+		backButton.setOnClickListener(mOnClickListener);
+		forwardButton.setOnClickListener(mOnClickListener);
+		pauseButton.setOnClickListener(mOnClickListener);
 		
 		ChannelBean channelBean = getIntentData();
 		if(channelBean != null){
 			String path = channelBean.getUrl();
-			mUrl = doUrlDecoder(path);
+			mUrl = mPlayUrl = doUrlDecoder(path);
 		}else{
 			Intent intent = getIntent();
 			String path = intent.getDataString().toString();
-			mUrl = doUrlDecoder(path);
+			mUrl = mPlayUrl = doUrlDecoder(path);
 		}
+		
+		// Just for test,need use AsyncTask
+		startRequestM3u8(mPlayUrl, M3u8Manager.TYPE_LIVE);
+	}
+	
+	private void startRequestM3u8(String url, int playerType){
+		mM3u8Manager.start(url,playerType);
+	}
+	
+	private void stopRequestM3u8(){
+		mM3u8Manager.stop();
 	}
 	
 	private String doUrlDecoder(String path){
@@ -133,7 +164,6 @@ public class MediaPlayerActivity extends Activity {
 			mMediaPlayer.setVideoPath(url);
 			mMediaPlayer.start();
 		}
-		
 		//for test
 	}
 	
@@ -222,8 +252,8 @@ public class MediaPlayerActivity extends Activity {
 				hideMediaControl();
 				break;
 				
-			case MSG_PLAY_AGAIN:
-				play(mUrl);
+			case MSG_PLAY_VIDEO:
+				play(mPlayUrl);
 				
 			case MSG_NETWORK_SPEED:
 //				PackageManager pm = getPackageManager();
@@ -242,9 +272,9 @@ public class MediaPlayerActivity extends Activity {
 				break;
 				
 			case MSG_BUFFER_TIMEOUT:
-				Toast.makeText(MediaPlayerActivity.this, "网络异常，缓冲超时，重新请求~~~~", Toast.LENGTH_SHORT).show();
+				Toast.makeText(TVPlayerActivity.this, "网络异常，缓冲超时，重新请求~~~~", Toast.LENGTH_SHORT).show();
 				Log.e("Debug","MSG_BUFFER_TIMEOUT，缓冲超时，重新请求~~~~");
-				play(mUrl);
+				play(mPlayUrl);
 				
 			default:
 				break;
@@ -298,8 +328,42 @@ public class MediaPlayerActivity extends Activity {
 		public void onCompletion(IMediaPlayer mp) {
 			// TODO Auto-generated method stub
 			mBufferingIndicator.setVisibility(View.VISIBLE);
-			Toast.makeText(MediaPlayerActivity.this, "播放异常,3秒后重新请求~~~~", Toast.LENGTH_SHORT).show();
-			mHandler.sendEmptyMessageDelayed(MSG_PLAY_AGAIN, DELAY_PLAY_AGAIN);
+			Toast.makeText(TVPlayerActivity.this, "播放异常,3秒后重新请求~~~~", Toast.LENGTH_SHORT).show();
+			mHandler.sendEmptyMessageDelayed(MSG_PLAY_VIDEO, DELAY_PLAY_AGAIN);
+		}
+	};
+	
+	/**
+	 * 第一个m3u8生成时播放
+	 */
+	private OnCompletionListerner mOnM3u8CompletionListerner = new OnCompletionListerner() {
+		
+		@Override
+		public void onCompletion(String url) {
+			// TODO Auto-generated method stub
+			mPlayUrl = url;
+			if(!mMediaPlayer.isPlaying()){
+				mHandler.sendEmptyMessage(MSG_PLAY_VIDEO);
+			}
+		}
+	}; 
+	
+	private OnClickListener mOnClickListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			switch (arg0.getId()) {
+			case R.id.timeshift_back:
+				Log.d("Debug","onClick timeshift back");
+				stop();
+				mM3u8Manager.stop();
+				mM3u8Manager.start(mUrl, M3u8Manager.TYPE_TIMESHIFT);
+				break;
+
+			default:
+				break;
+			}
 		}
 	};
 	
