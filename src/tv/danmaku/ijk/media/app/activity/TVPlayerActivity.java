@@ -34,10 +34,12 @@ public class TVPlayerActivity extends Activity {
 	private static final int MSG_NETWORK_SPEED = 9002;
 	private static final int MSG_BUFFER_TIMEOUT = 9003;
 	protected static final int MSG_M3U8_MANAGER = 9004;
+	protected static final int MSG_GOTO_LVIE = 9005;
 	
 	private static final long DELAY_HIDE_MEDIACONTROL = 10000;
 	private static final long DELAY_PLAY_AGAIN = 3000;
 	private static final long TIMEOUT_BUFFERING = 20*1000;
+	
 	
 	private OTTMediaPlayer mMediaPlayer;
 	private View mBufferingIndicator;
@@ -50,7 +52,10 @@ public class TVPlayerActivity extends Activity {
 	private Button backButton;
 	private Button forwardButton;
 	private Button pauseButton;
-	private long startTime;
+	private Button liveButton;
+	private Button playButton;
+	
+	private long mStartTime;
 	private long mTimeshiftStartTime;
 	private long mTimeshiftEndTime;
 	
@@ -99,6 +104,8 @@ public class TVPlayerActivity extends Activity {
 		backButton = (Button)findViewById(R.id.timeshift_back);
 		forwardButton = (Button)findViewById(R.id.timeshift_forward);
 		pauseButton = (Button)findViewById(R.id.timeshift_pause);
+		liveButton = (Button)findViewById(R.id.timeshift_live);
+		playButton = (Button)findViewById(R.id.timeshift_play);
 	}
 	
 	private void initParams() {
@@ -117,6 +124,8 @@ public class TVPlayerActivity extends Activity {
 		backButton.setOnClickListener(mOnClickListener);
 		forwardButton.setOnClickListener(mOnClickListener);
 		pauseButton.setOnClickListener(mOnClickListener);
+		liveButton.setOnClickListener(mOnClickListener);
+		playButton.setOnClickListener(mOnClickListener);
 		
 		ChannelBean channelBean = getIntentData();
 		if(channelBean != null){
@@ -133,7 +142,7 @@ public class TVPlayerActivity extends Activity {
 	}
 	
 	private void startRequestM3u8(String url, int playerType, long startTime, long endTime){
-		mM3u8Manager.start(url,playerType,startTime,endTime);
+		mM3u8Manager.start(url,playerType,startTime,endTime,0);
 	}
 	
 	private void stopRequestM3u8(){
@@ -168,9 +177,8 @@ public class TVPlayerActivity extends Activity {
 			mMediaPlayer.stopPlayback();
 			mMediaPlayer.setVideoPath(url);
 			mMediaPlayer.start();
-			startTime = System.currentTimeMillis();
 			if(mM3u8Manager.getPlayerType() != M3u8Manager.TYPE_TIMESHIFT)
-				mTimeshiftStartTime = System.currentTimeMillis();
+				mStartTime = System.currentTimeMillis();
 		}
 		//for test
 	}
@@ -179,7 +187,7 @@ public class TVPlayerActivity extends Activity {
 		if(mMediaPlayer != null){
 			cancelBufferingTimeout();
 			mMediaPlayer.stopPlayback();
-			startTime = 0;
+			mStartTime = 0;
 		}
 	}
 	
@@ -251,6 +259,12 @@ public class TVPlayerActivity extends Activity {
 		mHandler.removeMessages(MSG_BUFFER_TIMEOUT);
 	}
 	
+	private void playLive(){
+		stop();
+		mM3u8Manager.stop();
+		mM3u8Manager.start(mUrl, M3u8Manager.TYPE_LIVE,0,0,0);
+	}
+	
 	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler(){
 		@Override
@@ -281,11 +295,14 @@ public class TVPlayerActivity extends Activity {
 				break;
 				
 			case MSG_BUFFER_TIMEOUT:
-				Toast.makeText(TVPlayerActivity.this, "网络异常，缓冲超时，重新请求~~~~", Toast.LENGTH_SHORT).show();
-				Log.e("Debug","MSG_BUFFER_TIMEOUT，缓冲超时，重新请求~~~~");
+				Toast.makeText(TVPlayerActivity.this, "网络异常，缓冲超时，重新请求~~~", Toast.LENGTH_SHORT).show();
+				Log.e("Debug","MSG_BUFFER_TIMEOUT，缓冲超时，重新请求");
 				mM3u8Manager.stop();
 				play(mUrl);
-				
+			
+			case MSG_GOTO_LVIE:
+				Toast.makeText(TVPlayerActivity.this, "时移切回直播", Toast.LENGTH_SHORT).show();
+				break;
 			default:
 				break;
 			}
@@ -307,7 +324,7 @@ public class TVPlayerActivity extends Activity {
 		@Override
 		public boolean onError(IMediaPlayer mp, int what, int extra) {
 			// TODO Auto-generated method stub
-//			Toast.makeText(MediaPlayerActivity.this, "onError~~~~", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(MediaPlayerActivity.this, "onError", Toast.LENGTH_SHORT).show();
 			return false;
 		}
 	};
@@ -338,7 +355,7 @@ public class TVPlayerActivity extends Activity {
 		public void onCompletion(IMediaPlayer mp) {
 			// TODO Auto-generated method stub
 			mBufferingIndicator.setVisibility(View.VISIBLE);
-			Toast.makeText(TVPlayerActivity.this, "播放异常,3秒后重新请求~~~~", Toast.LENGTH_SHORT).show();
+			Toast.makeText(TVPlayerActivity.this, "播放异常,3秒后重新请求", Toast.LENGTH_SHORT).show();
 			mHandler.sendEmptyMessageDelayed(MSG_PLAY_VIDEO, DELAY_PLAY_AGAIN);
 		}
 	};
@@ -349,12 +366,17 @@ public class TVPlayerActivity extends Activity {
 	private OnCompletionListerner mOnM3u8CompletionListerner = new OnCompletionListerner() {
 		
 		@Override
-		public void onCompletion(String url, long startTime, long endTime) {
+		public void onCompletion(String url, long startTime, long endTime, boolean isLive) {
 			// TODO Auto-generated method stub
+			if(isLive){
+				mHandler.sendEmptyMessage(MSG_GOTO_LVIE);
+				playLive();
+				return;
+			}
 			mPlayUrl = url;
 			if(mM3u8Manager.getPlayerType() == M3u8Manager.TYPE_TIMESHIFT){
-				mTimeshiftStartTime = startTime*1000;
-				mTimeshiftEndTime = endTime*1000;
+				mTimeshiftStartTime = startTime;
+				mTimeshiftEndTime = endTime;
 				Log.d("Debug","onCompletion startTime:"+startTime+" endTime:"+endTime);
 			}
 			if(!mMediaPlayer.isPlaying()){
@@ -371,14 +393,50 @@ public class TVPlayerActivity extends Activity {
 			switch (arg0.getId()) {
 			case R.id.timeshift_back:
 				int position = mMediaPlayer.getCurrentPosition();
-				long endTime = (mTimeshiftStartTime + position)/1000;
-				Log.d("Debug","timeshift position:"+position+" endTime:"+endTime);
+				if(mM3u8Manager.getPlayerType() == M3u8Manager.TYPE_LIVE)
+					mTimeshiftEndTime = (mStartTime + position)/1000;
+				else if(mM3u8Manager.getPlayerType() == M3u8Manager.TYPE_TIMESHIFT){
+					mTimeshiftEndTime = (mTimeshiftStartTime*1000 + position)/1000;
+				}
+				Log.d("Debug","timeshift position:"+position/1000+" endTime:"+mTimeshiftEndTime);
 				
 				stop();
 				mM3u8Manager.stop();
-				mM3u8Manager.start(mUrl, M3u8Manager.TYPE_TIMESHIFT,0,endTime);
+				mM3u8Manager.start(mUrl, M3u8Manager.TYPE_TIMESHIFT,0,mTimeshiftEndTime,M3u8Manager.TYPE_BACK);
 				break;
-
+				
+			case R.id.timeshift_forward:
+				Log.d("Debug","timeshift_");
+				int pos = mMediaPlayer.getCurrentPosition();
+				if(mM3u8Manager.getPlayerType() == M3u8Manager.TYPE_LIVE){
+					Toast.makeText(TVPlayerActivity.this, "当前已是直播状态...", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				else if(mM3u8Manager.getPlayerType() == M3u8Manager.TYPE_TIMESHIFT){
+					if(mM3u8Manager.getPlayerType() == M3u8Manager.TYPE_TIMESHIFT){
+						mTimeshiftEndTime = (mTimeshiftStartTime*1000 + pos)/1000;
+					}
+				}
+				stop();
+				mM3u8Manager.stop();
+				mM3u8Manager.start(mUrl, M3u8Manager.TYPE_TIMESHIFT,0,mTimeshiftEndTime,M3u8Manager.TYPE_FORWARD);
+				break;
+			
+			case R.id.timeshift_live:
+				playLive();
+				break;
+				
+			case R.id.timeshift_pause:
+//				mMediaPlayer.pause();
+//				pauseButton.setVisibility(View.GONE);
+//				playButton.setVisibility(View.VISIBLE);
+				break;
+				
+			case R.id.timeshift_play:
+//				mMediaPlayer.resume();
+//				pauseButton.setVisibility(View.VISIBLE);
+//				playButton.setVisibility(View.GONE);
+				
 			default:
 				break;
 			}

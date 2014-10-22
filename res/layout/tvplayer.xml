@@ -46,10 +46,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_centerHorizontal="true"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
         android:layout_marginBottom="10dip"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
         
         <Button
             android:id="@+id/timeshift_back" 
@@ -63,12 +63,25 @@
             android:layout_height="wrap_content"
             android:text="forward"/>
         
-            <Button
+        <Button
             android:id="@+id/timeshift_pause" 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:text="pause"/>
         
+        <Button
+            android:id="@+id/timeshift_play" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="play"/>
+        
+        <Button
+            android:id="@+id/timeshift_live" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="live"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -15,6 +15,10 @@ public class M3u8Manager{
 	public static final int TYPE_TIMESHIFT = 2;
 	public static final int TYPE_PLAYBACK = 3;
 	
+	public static final int TYPE_BACK = 10;
+	public static final int TYPE_FORWARD = 11;
+	public static final int TYPE_PAUSE = 12;
+	
 	private static final long TIME_PERIOID_LIVE = 5*1000;
 	private static final long TIME_PERIOID_TIMESHIFT = 30*1000;
 	private static final int mTimeShift = 60;//60s
@@ -24,18 +28,20 @@ public class M3u8Manager{
 	private Timer mTimer;
 	private String mNetWorkUrl;
 	private int mPlayerType;
-	private long endTime;
-	private long startTime;
+	private long mEndTime;
+	private long mStartTime;
 	private String mUrl;
+	private int mSeekType;
 	
 	public M3u8Manager(Context context) {
 		// TODO Auto-generated constructor stub
 		mContext = context;
 	}
 	
-	public void start(String url,int playerType,long startTime, long endTime){
+	public void start(String url,int playerType,long startTime, long endTime, int seekType){
 		reset();
-		this.endTime = endTime;
+		mEndTime = endTime;
+		mSeekType = seekType;
 		mPlayerType = playerType;
 		mTimer = new Timer();
 		mM3u8TimerTask = new M3u8TimerTask();
@@ -65,9 +71,10 @@ public class M3u8Manager{
 		}
 		mPlayerType = TYPE_LIVE;
 		mNetWorkUrl = null;
-		startTime = 0;
-		endTime = 0;
-		deleteLocalUrl();
+		mStartTime = 0;
+		mEndTime = 0;
+		mSeekType = 0;
+//		deleteLocalUrl();
 	}
 	
 	public void setOnCompeleteListerner(OnCompletionListerner listerner){
@@ -88,7 +95,7 @@ public class M3u8Manager{
 	 *  http://124.161.62.197:9000/TV/0/00000000000000050000000000000014/9.m3u8?bitrate=auto&tvodstarttime=1410364800&tvodendtime=1410368400
 	 *	http://124.161.62.197:9000/TV/0/00000000000000050000000000000014/9.m3u8?tvodstarttime=1410364800&tvodendtime=1410368400
 	 *
-	   	直播URL:
+	   	直播URL(带bitrate=auto参数):
 	  	#EXTM3U
 		#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3053568
 		http://124.161.62.197:9000/TV/0/00000000000000050000000000000014/9.m3u8?tvodstarttime=1410364800&tvodendtime=1410368400
@@ -116,15 +123,13 @@ public class M3u8Manager{
 			if(params[i].contains("EXT-X-STREAM-INF")){
 				String[] array = params[i].split("\n");
 				mNetWorkUrl = array[1].trim();
-				Log.d("Debug","nextUrl:"+mNetWorkUrl);
 				return requstM3u8(mNetWorkUrl);
 			}
 			
 			if(mPlayerType == TYPE_TIMESHIFT){
 				if(response.contains("#EXT-X-ENDLIST")){
-					response = response.replace("#EXT-X-MEDIA-SEQUENCE:0", "#EXT-X-MEDIA-SEQUENCE:"+startTime/10);
+					response = response.replace("#EXT-X-MEDIA-SEQUENCE:0", "#EXT-X-MEDIA-SEQUENCE:"+mStartTime/10);
 					response = response.replace("#EXT-X-ENDLIST", "");
-//					Log.d("Debug","response:"+response);
 				}
 			}
 		}
@@ -155,22 +160,40 @@ public class M3u8Manager{
 	
 	private String getTimeShiftUrl(String url, boolean isFirstRequest){
 		StringBuffer sb = new StringBuffer(url);
-		if(isFirstRequest){
-			// the firt time
-//			endTime = endTime - 90;
-			startTime = endTime - 60;
-		}else{
-			// next time
-			startTime += 30;
-			endTime += 30;
+		if(mSeekType == M3u8Manager.TYPE_BACK){
+			if(isFirstRequest){
+				// the firt time
+				mEndTime = mEndTime - 90;
+				mStartTime = mEndTime - 60;
+			}else{
+				// next time
+				mStartTime += 30;
+				mEndTime += 30;
+			}
+		}else if(mSeekType == M3u8Manager.TYPE_FORWARD){
+			if(isFirstRequest){
+				// the firt time
+				mStartTime = mEndTime+60;
+				mEndTime = mStartTime+60;
+				
+				if(mEndTime >= getCurrentTime()/1000 - 60){
+					mOnCompletionListerner.onCompletion(null,0,0,true);
+					mPlayerType = TYPE_LIVE;
+					return null;
+				}
+			}else{
+				// next time
+				mStartTime += 30;
+				mEndTime += 30;
+			}
 		}
 		
 		if(url.contains("?")){
-			sb.append("&tvodstarttime="+startTime);
-			sb.append("&tvodendtime="+endTime);
+			sb.append("&tvodstarttime="+mStartTime);
+			sb.append("&tvodendtime="+mEndTime);
 		}else{
-			sb.append("?tvodstarttime="+startTime);
-			sb.append("&tvodendtime="+endTime);
+			sb.append("?tvodstarttime="+mStartTime);
+			sb.append("&tvodendtime="+mEndTime);
 		}
 		Log.d("Debug","getTimeShiftUrl:"+sb.toString());
 		return sb.toString();
@@ -189,7 +212,6 @@ public class M3u8Manager{
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			Log.d("Debug","M3u8TimerTask run:"+mPlayerType+" url:"+mNetWorkUrl);
 			String localUrl = null;
 			if(mPlayerType == TYPE_LIVE)
 				localUrl = requstM3u8(mUrl);
@@ -200,13 +222,13 @@ public class M3u8Manager{
 			}
 			if(mOnCompletionListerner != null){
 				if(!StringUtils.isEmpty(localUrl))
-					mOnCompletionListerner.onCompletion(localUrl,startTime,endTime);
+					mOnCompletionListerner.onCompletion(localUrl,mStartTime,mEndTime,false);
 			}
 		}
 	};
 	
 	public static interface OnCompletionListerner{
-		public void onCompletion(String url,long startTime,long endTime);
+		public void onCompletion(String url,long startTime,long endTime,boolean isLive);
 	}
 
 }

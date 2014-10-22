@@ -31,7 +31,6 @@ public class HttpUtil {
 	 * @throws ServerException 
 	 */
     public static String postHttpClient(String strUrl, Map<String, String> params, String body) {
-    	Log.d("Debug","postHttpClient:"+strUrl);
         DefaultHttpClient httpClient = null;
         HttpPost post = null;
         HttpEntity entity = null;
@@ -59,7 +58,6 @@ public class HttpUtil {
             //服务器成功返回响应
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 String result = EntityUtils.toString(httpResponse.getEntity(),"utf-8");
-                Log.d("Debug","postHttpClient:"+result);
                 return result;	
             } else {
             	// 服务器错误

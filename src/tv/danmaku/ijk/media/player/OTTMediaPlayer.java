@@ -504,7 +504,8 @@ public class OTTMediaPlayer implements MediaController.MediaPlayerControl {
     }
 
     public void resume() {
-        if (mSurfaceHolder == null && mCurrentState == STATE_SUSPEND) {
+//        if (mSurfaceHolder == null && mCurrentState == STATE_SUSPEND) {
+        if (mCurrentState == STATE_SUSPEND) {
             mTargetState = STATE_RESUME;
             mCurrentState = STATE_RESUME;
             mMediaPlayer.start();
