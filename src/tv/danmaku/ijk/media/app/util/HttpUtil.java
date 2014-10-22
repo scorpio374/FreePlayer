@@ -9,7 +9,9 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -31,6 +33,7 @@ public class HttpUtil {
 	 * @throws ServerException 
 	 */
     public static String postHttpClient(String strUrl, Map<String, String> params, String body) {
+    	Log.d("Debug","postHttpClient url"+strUrl);
         DefaultHttpClient httpClient = null;
         HttpPost post = null;
         HttpEntity entity = null;
@@ -38,7 +41,7 @@ public class HttpUtil {
             httpClient = new DefaultHttpClient();
             post = new HttpPost(strUrl);
             
-            httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 3600*000); // 15000
+            httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 3600*1000); // 15000
             httpClient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 3600*1000); // 15000
             
             // 准备参数
@@ -58,10 +61,11 @@ public class HttpUtil {
             //服务器成功返回响应
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 String result = EntityUtils.toString(httpResponse.getEntity(),"utf-8");
+                Log.d("Debug","postHttpClient response:"+result);
                 return result;	
             } else {
             	// 服务器错误
-            	Log.d("Debug","postHttpClient response SC_ERROR");
+            	Log.d("Debug","postHttpClient response SC_ERROR:"+httpResponse.getStatusLine().getStatusCode());
             	return null;
             }
 		} catch (Exception e) {
@@ -81,5 +85,26 @@ public class HttpUtil {
                 httpClient.getConnectionManager().shutdown();
             }
         }
+    }
+    
+    public static String getHttpClient(String url){
+    	Log.d("Debug","getHttpClient url"+url);
+		HttpResponse httpResponse;
+		try {
+			HttpGet httpRequest = new HttpGet(url);// 建立http get联机
+			httpResponse = new DefaultHttpClient().execute(httpRequest);
+			if (httpResponse.getStatusLine().getStatusCode() == 200){
+    		    String result = EntityUtils.toString(httpResponse.getEntity());// 获取相应的字符串
+    		    Log.d("Debug","getHttpClient response:"+result);
+    		    return result;
+    		}else {
+            	Log.d("Debug","getHttpClient response SC_ERROR:"+httpResponse.getStatusLine().getStatusCode());
+            	return null;
+    		}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}// 发出http请求
     }
 }

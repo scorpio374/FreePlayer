@@ -85,7 +85,8 @@ public class M3u8Manager{
 		if(url == null){
 			return null;
 		}
-		String response = HttpUtil.postHttpClient(url, null, null);
+//		String response = HttpUtil.postHttpClient(url, null, null);
+		String response = HttpUtil.getHttpClient(url);
 		return parseM3u8(response);
 	}
 	
