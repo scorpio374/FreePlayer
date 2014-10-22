@@ -16,7 +16,7 @@ public class M3u8Manager{
 	public static final int TYPE_PLAYBACK = 3;
 	
 	private static final long TIME_PERIOID_LIVE = 5*1000;
-	private static final long TIME_PERIOID_TIMESHIFT = 60*1000;
+	private static final long TIME_PERIOID_TIMESHIFT = 30*1000;
 	private static final int mTimeShift = 60;//60s
 	private Context mContext;
 	private OnCompletionListerner mOnCompletionListerner;
@@ -33,8 +33,9 @@ public class M3u8Manager{
 		mContext = context;
 	}
 	
-	public void start(String url,int playerType){
+	public void start(String url,int playerType,long startTime, long endTime){
 		reset();
+		this.endTime = endTime;
 		mPlayerType = playerType;
 		mTimer = new Timer();
 		mM3u8TimerTask = new M3u8TimerTask();
@@ -106,40 +107,28 @@ public class M3u8Manager{
 	 * @return
 	 */
 	private String parseM3u8(String response){
-		// may be error
 		if(StringUtils.isEmpty(response))
 			return null;
 		
-		Log.d("Debug","response before:"+response.toString());
-		if(mPlayerType == TYPE_TIMESHIFT){
-			if(response.contains("#EXT-X-ENDLIST")){
-//				response = response.replace("#EXT-X-MEDIA-SEQUENCE:0", "#EXT-X-MEDIA-SEQUENCE:"+startTime/10);
-//				response = response.replace("#EXT-X-ENDLIST", "");
-				Log.d("Debug","response:"+response);
+		String[] params = response.split("#");
+		for(int i = 0; i < params.length; i++){
+			
+			if(params[i].contains("EXT-X-STREAM-INF")){
+				String[] array = params[i].split("\n");
+				mNetWorkUrl = array[1].trim();
+				Log.d("Debug","nextUrl:"+mNetWorkUrl);
+				return requstM3u8(mNetWorkUrl);
+			}
+			
+			if(mPlayerType == TYPE_TIMESHIFT){
+				if(response.contains("#EXT-X-ENDLIST")){
+					response = response.replace("#EXT-X-MEDIA-SEQUENCE:0", "#EXT-X-MEDIA-SEQUENCE:"+startTime/10);
+					response = response.replace("#EXT-X-ENDLIST", "");
+//					Log.d("Debug","response:"+response);
+				}
 			}
 		}
-		
-//		String[] params = response.split("#");
-//		for(int i = 0; i < params.length; i++){
-////			Log.d("Debug","get params["+i+"]"+":"+params[i]);
-//			
-//			// choice the default url
-//			if(params[i].contains("EXT-X-STREAM-INF")){
-//				String[] array = params[i].split("\n");
-//				mNetWorkUrl = array[1].trim();
-//				Log.d("Debug","nextUrl:"+mNetWorkUrl);
-//				return requstM3u8(mNetWorkUrl);
-//			}
-//			
-//			if(mPlayerType == TYPE_TIMESHIFT){
-//				if(response.contains("#EXT-X-ENDLIST")){
-//					response = response.replace("#EXT-X-ENDLIST", "");
-//					Log.d("Debug","response:"+response);
-//				}
-//			}
-//		}
 		String localUrl = createLocalUrl(response);
-		Log.d("Debug","localUrl:"+localUrl);
 		return localUrl;
 	}
 	
@@ -156,7 +145,7 @@ public class M3u8Manager{
 	}
 	
 	private String getLocalPath(){
-		return "/mnt/sdcard/test.m3u8";
+		return "/mnt/sdcard/aaa.m3u8";
 //		return mContext.getCacheDir()+"/"+"test.m3u8";
 	}
 	
@@ -164,16 +153,16 @@ public class M3u8Manager{
 		return System.currentTimeMillis();
 	}
 	
-	private String getTimeShiftUrl(String url){
+	private String getTimeShiftUrl(String url, boolean isFirstRequest){
 		StringBuffer sb = new StringBuffer(url);
-		if(endTime == 0){
+		if(isFirstRequest){
 			// the firt time
-			endTime = getCurrentTime()/1000;
+//			endTime = endTime - 90;
 			startTime = endTime - 60;
 		}else{
 			// next time
-			startTime = endTime;
-			endTime += TIME_PERIOID_TIMESHIFT/1000;
+			startTime += 30;
+			endTime += 30;
 		}
 		
 		if(url.contains("?")){
@@ -187,7 +176,16 @@ public class M3u8Manager{
 		return sb.toString();
 	}
 	
+	public void setPlayerType(int playerType) {
+		this.mPlayerType = playerType;
+	}
+
+	public int getPlayerType(){
+		return mPlayerType;
+	}
+
 	private class M3u8TimerTask extends TimerTask{
+		boolean isFirstRequest = true;
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
@@ -196,18 +194,19 @@ public class M3u8Manager{
 			if(mPlayerType == TYPE_LIVE)
 				localUrl = requstM3u8(mUrl);
 			else if(mPlayerType == TYPE_TIMESHIFT){
-				mNetWorkUrl = getTimeShiftUrl(mUrl);
+				mNetWorkUrl = getTimeShiftUrl(mUrl,isFirstRequest);
+				isFirstRequest = false;
 				localUrl = requstM3u8(mNetWorkUrl);
 			}
 			if(mOnCompletionListerner != null){
 				if(!StringUtils.isEmpty(localUrl))
-					mOnCompletionListerner.onCompletion(localUrl);
+					mOnCompletionListerner.onCompletion(localUrl,startTime,endTime);
 			}
 		}
 	};
 	
 	public static interface OnCompletionListerner{
-		public void onCompletion(String url);
+		public void onCompletion(String url,long startTime,long endTime);
 	}
 
 }
