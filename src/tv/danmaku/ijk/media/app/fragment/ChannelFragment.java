@@ -106,13 +106,13 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	public void onResume() {
 		// TODO Auto-generated method stub
 		Log.d("Debug","onResume:"+scrollX+" "+scrollY);
-//		scrollView.smoothScrollTo(scrollX, scrollY);
-//		scrollView.scrollTo(scrollX, scrollY);
-//		scrollView.post(new Runnable() {   
-//		    public void run() {  
-//		    	scrollView.scrollTo(scrollX, scrollY);  
-//		    }   
-//		});  
+		scrollView.smoothScrollTo(scrollX, scrollY);
+		scrollView.scrollTo(scrollX, scrollY);
+		scrollView.post(new Runnable() {   
+		    public void run() {  
+		    	scrollView.scrollTo(scrollX, scrollY);  
+		    }   
+		});  
 		super.onResume();
 	}
 	
@@ -120,9 +120,8 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	public void onPause() {
 		// TODO Auto-generated method stub
 		Log.d("Debug","onPause");
-//		scrollX = scrollView.getScrollX();
-//		scrollY = scrollView.getScrollY();
-//		Log.d("Debug","scrollX:"+scrollX+" scrollY:"+scrollY);
+		scrollX = scrollView.getScrollX();
+		scrollY = scrollView.getScrollY();
 		super.onPause();
 	}
 	
