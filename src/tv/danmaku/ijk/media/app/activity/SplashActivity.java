@@ -1,10 +1,10 @@
 package tv.danmaku.ijk.media.app.activity;
 
-import tv.danmaku.ijk.media.demo.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import cn.sz.free.player.R;
 
 public class SplashActivity extends Activity {
 	private static final long DELAY_TIME = 2000;

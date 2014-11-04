@@ -42,5 +42,10 @@
 	
 	<string name="tab_channel_name">自由TV</string>
 	<string name="tab_find_name">发现</string>
-    
+	
+	<string-array name="channel_type_array">
+	    <item>央视频道</item>
+	    <item>卫视频道</item>
+	</string-array>
+	
 </resources>

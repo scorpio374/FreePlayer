@@ -6,7 +6,6 @@ import java.net.URLDecoder;
 import tv.danmaku.ijk.media.app.bean.ChannelBean;
 import tv.danmaku.ijk.media.app.util.M3u8Manager;
 import tv.danmaku.ijk.media.app.util.M3u8Manager.OnCompletionListerner;
-import tv.danmaku.ijk.media.demo.R;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnErrorListener;
@@ -27,6 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+import cn.sz.free.player.R;
 
 public class TVPlayerActivity extends Activity {
 	private static final int MSG_HIDE_MEDIACONTROL = 9000;

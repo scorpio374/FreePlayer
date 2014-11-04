@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import cn.sz.free.player.R;
 
 public class FFMpegFileExplorer extends ListActivity {
 

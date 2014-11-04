@@ -11,7 +11,6 @@ import tv.danmaku.ijk.media.app.adapter.ChannelBoxAdapter;
 import tv.danmaku.ijk.media.app.adapter.ProgramPagerAdapter;
 import tv.danmaku.ijk.media.app.bean.ChannelBoxBean;
 import tv.danmaku.ijk.media.app.widget.NoScrollGridView;
-import tv.danmaku.ijk.media.demo.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -27,11 +26,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ScrollView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import cn.sz.free.player.R;
 
 public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	
@@ -266,7 +266,6 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 		public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 				long arg3) {
 			// TODO Auto-generated method stub
-			Log.d("Debug","onItemClick");
 			Intent intent = new Intent(context, ChannelListActivity.class);
 			intent.putExtra("channelType", position);
 			startActivity(intent);

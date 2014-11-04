@@ -4,8 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 import tv.danmaku.ijk.media.app.bean.ChannelBean;
-import tv.danmaku.ijk.media.app.util.NetworkSpeed;
-import tv.danmaku.ijk.media.demo.R;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnErrorListener;
@@ -16,9 +14,6 @@ import tv.danmaku.ijk.media.widget.MediaController;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,6 +23,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
+import cn.sz.free.player.R;
 
 public class MediaPlayerActivity extends Activity {
 	private static final int MSG_HIDE_MEDIACONTROL = 9000;

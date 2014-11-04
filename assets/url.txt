@@ -6,6 +6,8 @@ http://vapptime.cntv.wscdns.com/cache/14_/seg0/index.m3u8
 http://nowtv.tvesou.com:5023/m3u8/ccws1/cctv1.m3u8?pwd=yuntutv&nwtime=1410342516&sign=addd37fe7d65a8cde754077cca4fce07
 http://nowtv.tvesou.com:5023/m3u8/cckw1/cctv1.m3u8?pwd=yuntutv&nwtime=1411569601&sign=b0a8f72ae765273e53e951482e0f453f
 http://se3.se.hls1-live.cloudtv.ocn.net.cn/CV1/VGA/800K.m3u8
+HD:http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV1HD&type=ipsd
+
 
 cctv2:
 http://nowtv.tvesou.com:5023/m3u8/tvwshd/cctv2.m3u8?pwd=yuntutv&nwtime=1411565774&sign=b56d59bda1200b04c83b4169b469dfff
@@ -36,6 +38,7 @@ http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV5HD&type=iptv
 http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV5HD&type=ipsd
 http://vapptime.cntv.wscdns.com/cache/214_/seg0/index.m3u8
 http://nowtv.tvesou.com:5023/m3u8/cckw1/cctv5.m3u8?pwd=yuntutv&nwtime=1411568145&sign=f4b2fbafef7eb7c22847a81030dd7fcd
+HD:http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV5HD&type=ipsd
 
 cctv6:
 http://nowtv.tvesou.com:5023/m3u8/tvwshd/cctv6.m3u8?pwd=yuntutv&nwtime=1411568203&sign=a4a8e2a5fefd4eb9ec12ed57df6d939f
@@ -74,6 +77,10 @@ cctv13:
 http://nowtv.tvesou.com:5023/m3u8/tvwshd/cctv13.m3u8?pwd=yuntutv&nwtime=1411568864&sign=ebe2ee82e902a1977644a256a2c944d6
 http://nowtv.tvesou.com:5023/m3u8/cckw1/cctv13.m3u8?pwd=yuntutv&nwtime=1411569076&sign=21a258249d55265aa1e0efbccadbe843
 http://vapptime.cntv.wscdns.com/cache/24_/seg0/index.m3u8
+
+HD:
+http://14.152.86.48/m3u8/cctvnew/desc.m3u8?stream_id=cctvnew&ltm=1414867623&lkey=5069ef010e34dc8b711fa89598314162&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=14.152.86.52,183.60.210.73,183.60.210.113&buss=0&qos=1&cips=113.91.164.128&geo=CN-19-248-1&tmn=1414849623&pnl=1021,889,242&rson=1&ext=m3u8&sign=live_tv&nwtime=1414849623
+
 
 cctv14:
 http://nowtv.tvesou.com:5023/m3u8/tvwshd/cctv14.m3u8?pwd=yuntutv&nwtime=1411568981&sign=ad6db079a050d17a26b69748ec314a0e
@@ -117,6 +124,10 @@ http://nowtv.tvesou.com:5023/m3u8/tvfw/zjws.m3u8?pwd=yuntutv&nwtime=1411570335&s
 http://nowtv.tvesou.com:4110/b/cnr.php?ip=ws&id=60&pwd=yuntutv&nwtime=1411570377&sign=cfb4898adc1a4f9f829417ef15e73370
 http://gslb.tv.sohu.com/live?cid=31&type=hls
 
+HD：
+http://v14.tv.cctv5.cctv.com/approve/live?channel=ZheJiangHD&type=ipsd
+
+
 江苏卫视：
 http://14.204.84.49:32119/live/JSTVHQ/playlist.m3u8
 http://nowtv.tvesou.com:4110/b/dptv.php?src=dptv&tvn=jsws&pwd=yuntutv&nwtime=1411570464&sign=d5f75727ca3a35e5d6ad3a9d8471a9db
@@ -127,6 +138,9 @@ http://127.0.0.1:9806/record.m3u8?type=pplive2&playlink=238baa4ac12f427896cecf12
 http://nowtv.tvesou.com:4110/b/zjtv.php?src=zjtv&tvn=jswshd&pwd=yuntutv&nwtime=1411570582&sign=a00aa861bf9cf72dd7f6bbb7912ed4a0
 http://219.232.160.143:5080/hls/2ae90f52c9d90a319d6dcaadeb49844a.m3u8
 
+HD:
+http://121.201.106.2:443/m3u8/jiangsuHD_1800/desc.m3u8?stream_id=jiangsuHD_1800&ltm=1414866482&lkey=016427459492f45bede2893d9aba8009&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=121.201.106.11,121.14.111.56,121.14.111.13&buss=0&qos=1&cips=113.92.248.102&geo=CN-19-248-1&tmn=1414848482&pnl=1012,895,286&rson=1&ext=m3u8&sign=live_tv&nwtime=1414848482
+
 东方卫视：
 http://zb.v.qq.com:1863/?progid=3900155972&ostype=ios
 http://nowtv.tvesou.com:4110/b/dptv.php?src=dptv&tvn=dfws&pwd=yuntutv&nwtime=1411570771&sign=2ec94bfdae5394e57056a24d9abbcf66
@@ -136,6 +150,9 @@ http://nowtv.tvesou.com:5023/m3u8/ccws1/dfws.m3u8?pwd=yuntutv&nwtime=1411570857&
 http://nowtv.tvesou.com:5023/m3u8/tvfw/dfws.m3u8?pwd=yuntutv&nwtime=1411570880&sign=b943614550a7dd6b9e75eb737f05f0e9
 http://nowtv.tvesou.com:5023/m3u8/tvwshd/dfws.m3u8?pwd=yuntutv&nwtime=1411570897&sign=80096b55a1e351abb691a40e323a46ac
 
+HD：
+http://14.22.30.67/m3u8/lb_tv_720p/desc.m3u8?stream_id=lb_tv_720p&ltm=1414866636&lkey=03c67563d67adb37f4e3b7351a3f02a6&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=14.22.30.79,121.14.111.79,121.14.111.6&ver=live_3&buss=202&qos=4&cips=183.12.198.45&geo=CN-19-248-1&tmn=1414848636&pnl=896,895,286&rson=1&ext=m3u8&sign=live_tv&nwtime=1414848633
+
 安徽卫视：
 http://nowtv.tvesou.com:5023/m3u8/cckw1/ahws.m3u8?pwd=yuntutv&nwtime=1411570964&sign=3d5d8c3380df7ccdb7575b8e171f28f2
 http://nowtv.tvesou.com:5023/m3u8/tvfw/ahws.m3u8?pwd=yuntutv&nwtime=1411570994&sign=806eac0ea45f9458fa6f89d53fdcb5e3
@@ -143,6 +160,10 @@ http://nowtv.tvesou.com:5023/m3u8/tvwshd/ahws.m3u8?pwd=yuntutv&nwtime=1411571014
 http://nowtv.tvesou.com:5023/m3u8/ccak/ahws.m3u8?pwd=yuntutv&nwtime=1411571034&sign=ac6be9e3d120b91c6af547f272bdb87a
 http://zb.v.qq.com:1863/?progid=623043810
 http://zb.v.qq.com:1863/?progid=623043810&ostype=ios
+
+
+http://nowtv.tvesou.com:5023/m3u8/cckw1/ahws.m3u8?pwd=yuntutv&nwtime=1414848789&sign=e1553baa5402ea1a55b0783c785857b4
+
 
 重庆卫视：
 http://nowtv.tvesou.com:5023/m3u8/tvfwhd/cqws.m3u8?pwd=yuntutv&nwtime=1411572935&sign=7865006338309b9e1c349c21e11ae4ff
@@ -172,6 +193,10 @@ http://zb.v.qq.com:1863/?progid=2309309351&ostype=ios
 http://nowtv.tvesou.com:5023/m3u8/ccws1/szws.m3u8?pwd=yuntutv&nwtime=1411571676&sign=cf324edc420e8611b9f075be32d2d47c
 http://nowtv.tvesou.com:5023/m3u8/tvfwhd/szws.m3u8?pwd=yuntutv&nwtime=1411571696&sign=d8383291d41383a63d9260f409ffce12
 http://nowtv.tvesou.com:5023/m3u8/tvfw/szws.m3u8?pwd=yuntutv&nwtime=1411571711&sign=73c214510318ea3b331615fb8faf93a6
+
+HD:
+http://14.152.86.61/m3u8/shenzhenHD_1800/desc.m3u8?stream_id=shenzhenHD_1800&ltm=1414867506&lkey=a69a1b3203cec6cbac34d302a865f6b0&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=14.152.86.42,121.14.111.46,121.14.111.12&buss=0&qos=1&cips=183.12.198.45&geo=CN-19-248-1&tmn=1414849506&pnl=1021,895,286&rson=1&ext=m3u8&sign=live_tv&nwtime=1414849505
+
 
 东南卫视：
 http://nowtv.tvesou.com:5023/m3u8/cckw1/dnws.m3u8?pwd=yuntutv&nwtime=1411571748&sign=966ebf3f4319eebf2d8b16f0d3b7dc0a
@@ -343,7 +368,14 @@ http://nowtv.tvesou.com:5023/m3u8/tvfw/xjws.m3u8?pwd=yuntutv&nwtime=1411574987&s
 ---------------------------------------------------------------------------------------------------------------------
 												体育频道
 CCTV5+
+http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV5AHD&type=ipsd
 http://nowtv.tvesou.com:5023/m3u8/tvwshd/cctv5p.m3u8?pwd=yuntutv&nwtime=1411575080&sign=8916cee76e668c6d71f83d627e8c1480
+
+cctv5:
+http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV5HD&type=ipsd
+
+体育HD：
+http://14.22.30.93/m3u8/lb_hdz_720p/desc.m3u8?stream_id=lb_hdz_720p&ltm=1414860361&lkey=0b9a9faf7ac96cb63145c16d81a8f185&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=14.22.30.90,183.60.210.88,183.60.210.116&ver=live_3&buss=202&qos=4&cips=183.12.198.45&geo=CN-19-248-1&tmn=1414842361&pnl=896,889,242&rson=1&ext=m3u8&sign=live_tv&nwtime=1414842361
 
 风云足球：
 http://nowtv.tvesou.com:4110/b/jslt.php?id=fyzq&pwd=yuntutv&nwtime=1411575105&sign=5a4b4ba2db6939350a79d03d214005cd
@@ -374,20 +406,35 @@ http://14.22.30.83/97/30/3/letv-uts/14/ver_00_16-28954799-avc-475579-aac-32001-5
 热播剧HD:
 http://hot.vrs.sohu.com/ipad1955485_4622696832371_4166706.m3u8?plat=17
 
+云图剧场HD:
+http://hot.vrs.sohu.com/ipad480445_4625896241605_701577.m3u8?plat=17
+
+电影HD:
+http://nowtv.tvesou.com:4110/a/lb.php?id=lb_movie_1000&pwd=yuntutv&nwtime=1414843066&sign=cd189b94e23f7313c4bd47ff7fb3270e
+http://14.22.30.65/m3u8/lb_movie_1000/desc.m3u8?stream_id=lb_movie_1000&ltm=1414861127&lkey=1bcce0f959a65769a5b1250cc517ce8d&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=14.22.30.70,183.60.210.147,183.60.210.116&ver=live_3&buss=202&qos=4&cips=183.12.198.45&geo=CN-19-248-1&tmn=1414843127&pnl=896,889,242&rson=1&ext=m3u8&sign=live_tv&nwtime=1414843126
+
+
 高清综合HD:
 http://nowtv.tvesou.com:4110/a/lb.php?id=lb_zonghe_1000&pwd=yuntutv&nwtime=1411576004&sign=d64d1ba2268941250b99199c9d43127f
 
 香港影院：
 http://nowtv.tvesou.com:4110/a/lb.php?id=lb_hkmovie_1000&pwd=yuntutv&nwtime=1411576047&sign=10c61522f5d68d50e57750f5641e227c
+http://nowtv.tvesou.com:4110/a/lb.php?id=lb_hkmovie_1000&pwd=yuntutv&nwtime=1414843218&sign=7517200aa1f6087a92129f6908e68a77
+http://125.88.64.175/m3u8/lb_hkmovie_1000/desc.m3u8?stream_id=lb_hkmovie_1000&ltm=1414861227&lkey=74fd5ac0ec9df0a4dd0b52b200598380&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=121.14.111.92,121.14.111.6&ver=live_3&buss=202&qos=4&cips=113.116.30.149&geo=CN-19-248-1&tmn=1414843227&pnl=606,895,286&rson=1&ext=m3u8&sign=live_tv&nwtime=1414843227
 
 动作影院：
 http://nowtv.tvesou.com:4110/a/lb.php?id=lb_dzdy_1000&pwd=yuntutv&nwtime=1411576072&sign=c5bd3f3d3999d1e2d6f556190f2920d2
+http://183.60.199.43/m3u8/lb_dzdy_1000/desc.m3u8?stream_id=lb_dzdy_1000&ltm=1414861373&lkey=79f50572936d7b2db05044b8c8dce5c9&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=183.60.199.39,183.60.210.87,183.60.210.116&ver=live_3&buss=202&qos=4&cips=113.97.183.248&geo=CN-19-248-1&tmn=1414843373&pnl=859,889,242&rson=1&ext=m3u8&sign=live_tv&nwtime=1414843373
+
 
 电视剧1HD:
 http://nowtv.tvesou.com:4110/a/lb.php?id=lb_tv_1000&pwd=yuntutv&nwtime=1411576101&sign=17f63e1ee921fefb6f74710587dd52f0
+http://14.22.30.69/m3u8/lb_tv_1000/desc.m3u8?stream_id=lb_tv_1000&ltm=1414861434&lkey=7ce743370b1cb3c35627bac4d0843f90&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=14.22.30.93,183.60.210.89,183.60.210.116&ver=live_3&buss=202&qos=4&cips=183.38.70.37&geo=CN-19-248-1&tmn=1414843434&pnl=896,889,242&rson=1&ext=m3u8&sign=live_tv&nwtime=1414843434
 
 动漫HD:
 http://nowtv.tvesou.com:4110/a/lb.php?id=lb_comic_1000&pwd=yuntutv&nwtime=1411576129&sign=35b60c80cec9e78504c9a631b689605e
+http://183.61.63.79/m3u8/lb_comic_1000/desc.m3u8?stream_id=lb_comic_1000&ltm=1414861871&lkey=4e663456eb945c9d44a295004dae750b&platid=10&splatid=1004&tag=live&video_type=m3u8&useloc=0&mslice=3&path=183.61.63.75,121.14.111.68,121.14.111.6&ver=live_3&buss=202&qos=4&cips=14.153.1.192&geo=CN-19-248-1&tmn=1414843871&pnl=605,895,286&rson=1&ext=m3u8&sign=live_tv&nwtime=1414843871
+
 
 安徽影视：
 http://nowtv.tvesou.com:4110/b/ahtv.php?src=ahtv&tvn=ahys&pwd=yuntutv&nwtime=1411576149&sign=dbfe53ac8984ab12cd83e4ad998187a9
@@ -422,14 +469,68 @@ http://nowtv.tvesou.com:4110/b/live.php?src=hbwhtv&id=7&pwd=yuntutv&nwtime=14115
 山西影视：
 http://218.26.188.211/flvss?bitrate=800000&channel=Shan1XiFilm
 
+---------------------------------------------------------------------------------------------------------------------------
+												游戏频道（YY游戏直播）
+
 ----------------------------------------------------------------------------------------------------------------------------
 												热播频道			
 ----------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------
 												VIP频道											
+云图影院HD
+http://g3.letv.cn/vod/v2/OTYvMjIvOTcvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMwOTkxMDU3LWF2Yy0yMjQwMzItYWFjLTMyMDAxLTYxNTM0MzktMjA0MjgxODM3LWQ5MDc0NzMwMjk0YjFlZDA3MTIyMWE4N2FmYmVlMzA2LTE0MTQ3NjY4NDg5NzYubXA0?b=265&mmsid=1918146&tm=1414846422&key=c9963bce3406a21e3278d60763633e2e&platid=3&splatid=302&playid=0&tss=ios&vtype=21&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile				
+
+云图记录HD
+http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkGJUcwE5yPdiT8bYXnrdnEKXJZ3vGaH%2F4gfA8ZALaHQnTrVzw%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=8414847242021126e9265&token=4448&ts=1414847242&vid=XMzI2NjM3MTUy&type=mp4
+
+云图综艺HD
+http://hot.vrs.sohu.com/ipad2029226_4625441600626_5230547.m3u8?plat=17
+
+云图热剧HD								
+http://hot.vrs.sohu.com/ipad480447_4625896241714_701579.m3u8?plat=17
+
+猛男频道
+http://nowtv.tvesou.com:4110/b/live.php?src=dytv&id=4332&pwd=yuntutv&nwtime=1414847784&sign=5df9647fa1600921a78fc47672f4b7ee
+
 ----------------------------------------------------------------------------------------------------------------------------
 												资讯频道
+凤凰资讯：
+http://live.3gv.ifeng.com/zixun.m3u8
+
+彭博财经：
+http://hd4.lsops.net/live/bloomber_en_hls.smil/playlist.m3u8
+
+CCTV-2：
+http://nowtv.tvesou.com:5023/m3u8/tvfwhd/cctv2.m3u8?pwd=yuntutv&nwtime=1411567365&sign=ef8755383bf1977e872bb3acf43d9fbf
+http://nowtv.tvesou.com:5023/m3u8/tvfwhd/cctv2.m3u8?pwd=yuntutv&nwtime=1414845635&sign=744481d4080dcea0e798680d7fd1fd82
+
+CCTV-4:
+http://vapptime.cntv.wscdns.com/cache/19_/seg0/index.m3u8
+
+CCTV-13:
+http://vapptime.cntv.wscdns.com/cache/24_/seg0/index.m3u8
+
+CCTV-NEWS:
+http://nowtv.tvesou.com:5023/m3u8/tvfwhd/cctvnews.m3u8?pwd=yuntutv&nwtime=1414845926&sign=7afe1201463eeb234fea2a97403aa5c6
+
+												
 ----------------------------------------------------------------------------------------------------------------------------
+												教育频道
+CCTV-10
+http://nowtv.tvesou.com:5023/m3u8/tvfwhd/cctv10.m3u8?pwd=yuntutv&nwtime=1414844703&sign=9c97ee9f39183c5393f21e7f0e2b9ca4
+
+中国教育-1
+http://streaming.centv.cn/live/361fec8a6b0947a79c2c79d75fa38dfc.m3u8?fmt=h264_500k_ts&m3u8
+
+中国教育-2
+http://streaming.centv.cn/live/7bcc72bf01b5485d8289778030c07ec6.m3u8?fmt=h264_500k_ts&m3u8
+
+中国教育-3
+http://streaming.centv.cn/live/9e7752a97af34d2c8226118e272a28ab.m3u8?fmt=h264_500k_ts&m3u8
+
+职业指南
+http://live9.hbtv.com.cn/channels/zbk/zyzl/flv:sd/live
+
 ----------------------------------------------------------------------------------------------------------------------------
 												地方频道
 ----------------------------------------------------------------------------------------------------------------------------

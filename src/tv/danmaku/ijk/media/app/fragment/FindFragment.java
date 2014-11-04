@@ -14,6 +14,7 @@ import tv.danmaku.ijk.media.app.bean.NewsProgramBean;
 import tv.danmaku.ijk.media.app.bean.ProgramData;
 import tv.danmaku.ijk.media.app.bean.ProgramItem;
 import tv.danmaku.ijk.media.demo.R;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,6 +23,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import cn.sz.free.player.R;
 
 public class FindFragment extends Fragment {
 

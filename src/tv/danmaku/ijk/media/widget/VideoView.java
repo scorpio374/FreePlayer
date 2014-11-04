@@ -21,7 +21,6 @@ package tv.danmaku.ijk.media.widget;
 import java.io.IOException;
 import java.util.List;
 
-import tv.danmaku.ijk.media.demo.R;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnBufferingUpdateListener;
 import tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener;
@@ -49,6 +48,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import cn.sz.free.player.R;
 
 /**
  * Displays a video file. The VideoView class can load images from various
