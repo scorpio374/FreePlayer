@@ -1,0 +1,521 @@
+{
+    "data": {
+        "count": 4,
+        "data": [
+            {
+                "id": "32",
+                "index": "6",
+                "title": "新闻资讯",
+                "bannerUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_bannerUrl_6_141275739203087.jpg",
+                "end_time": "2015-07-14",
+                "items": [
+                    {
+                        "id": "2015",
+                        "title": "今日头条",
+                        "new": "Y",
+                        "index": "1000",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_1000_141448228135212.jpg",
+                        "playOrder": "high2low",
+                        "likeNum": 16469,
+                        "items": [
+                            {
+                                "id": "9787",
+                                "index": "1158",
+                                "videoHtml": "http://v.youku.com/v_show/id_XODE3MjkxMjE2.html",
+                                "title": "太空船2号”事故：“维珍”创始人视察现场 承诺“全额退票”",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=cCaVHkCFVMoH5CLWiT8bMyqwcnEIXJZ1gmqG%2FIg5SMZ%2BPerQmDnUwA%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=241498247119112d6b667&token=1757&ts=1414982471&vid=XODE3MjkxMjE2&type=mp4"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=cCaVHkCFVMoH5CLWiT8bMyqwcnEIXJZ1gmqG%2FIg5SMZ%2BPerQmDnUwA%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=241498247119112d6b667&token=1757&ts=1414982471&vid=XODE3MjkxMjE2&type=flv"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=cCaVHkCFVMoH5CLWiT8bMyqwcnEIXJZ1gmqG%2FIg5SMZ%2BPerQmDnUwA%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=241498247119112d6b667&token=1757&ts=1414982471&vid=XODE3MjkxMjE2&type=hd2"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至14-11-03",
+                        "ttype": "1",
+                        "hot": "Y",
+                        "like": "N",
+                        "info2": "国际国内新闻资讯速递"
+                    },
+                    {
+                        "id": "4780",
+                        "title": "娱乐星资讯",
+                        "new": "N",
+                        "index": "680",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_680_141387795859998.jpg",
+                        "playOrder": "high2low",
+                        "likeNum": 9795,
+                        "items": [
+                            {
+                                "id": "9792",
+                                "index": "330",
+                                "title": "兔女郎空运来台 神秘三角洲羞见客",
+                                "videoHtml": "http://v.youku.com/v_show/id_XODE3Mjk5MjQ0.html",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dCaVHkCFVM0B5CTbiD8bMy3gfHAJXJZ1gmqG%2FIg5BcZ%2BKejQmznTzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=641498231174012d12876&token=2729&ts=1414982311&vid=XODE3Mjk5MjQ0&type=mp4"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dCaVHkCFVM0B5CTbiD8bMy3gfHAJXJZ1gmqG%2FIg5BcZ%2BKejQmznTzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=641498231174012d12876&token=2729&ts=1414982311&vid=XODE3Mjk5MjQ0&type=flv"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dCaVHkCFVM0B5CTbiD8bMy3gfHAJXJZ1gmqG%2FIg5BcZ%2BKejQmznTzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=641498231174012d12876&token=2729&ts=1414982311&vid=XODE3Mjk5MjQ0&type=hd2"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至14-11-03",
+                        "ttype": "1",
+                        "hot": "Y",
+                        "like": "N",
+                        "info2": "传递最新,最热,最精彩的娱乐新闻,明星八卦~"
+                    },
+                    {
+                        "id": "8705",
+                        "title": "聚焦十八届四中全会",
+                        "new": "Y",
+                        "index": "40",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_40_141387487197537.jpg",
+                        "playOrder": "low2high",
+                        "likeNum": 5675,
+                        "items": [
+                            {
+                                "id": "9129",
+                                "index": "30",
+                                "title": "如何让法治成为信仰？",
+                                "videoHtml": "http://v.youku.com/v_show/id_XODEwODI1OTI0.html",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVM0H5iTbjT8bYyiwdHQLXJZ1gmrC%2FqYbAcRAMejQnj%2FTxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149823737451244b034&token=7121&ts=1414982373&vid=XODEwODI1OTI0&type=mp4"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVM0H5iTbjT8bYyiwdHQLXJZ1gmrC%2FqYbAcRAMejQnj%2FTxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149823737451244b034&token=7121&ts=1414982373&vid=XODEwODI1OTI0&type=flv"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVM0H5iTbjT8bYyiwdHQLXJZ1gmrC%2FqYbAcRAMejQnj%2FTxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149823737451244b034&token=7121&ts=1414982373&vid=XODEwODI1OTI0&type=hd2"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至14-10-24",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "从不敢腐到不能腐:四中全会清理“法外之地”"
+                    }
+                ],
+                "start_time": "2014-07-18",
+                "itemCount": 37,
+                "channel": "1073750015",
+                "url": "http://tvnow-pic.tvesou.com/campaign_topic_v2_url_6_14144831253768.jpg"
+            },
+            {
+                "id": "30",
+                "index": "5",
+                "title": "电视剧",
+                "bannerUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_bannerUrl_5_141170232767851.jpg",
+                "end_time": "2015-07-14",
+                "items": [
+                    {
+                        "id": "9319",
+                        "title": "红高粱",
+                        "new": "Y",
+                        "index": "310",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_310_141448359783227.jpg",
+                        "playOrder": "low2high",
+                        "likeNum": 33373,
+                        "items": [
+                            {
+                                "id": "9793",
+                                "index": "21",
+                                "title": "红高粱 第21集预告",
+                                "videoHtml": "http://www.letv.com/ptv/vplay/21081520.html",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://g3.letv.cn/vod/v2/OTkvMzIvNjcvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMxMDE4Mjc4LWF2Yy00ODE3MDMtYWFjLTMyMDE4LTE5MTk2MC0xMjU0MjQ1OC1mMjlkNGU5NmU1NDA5NTczMzJmMDRlNjIzMTM1YzYwOS0xNDE0ODMyMzE5MzAyLm1wNA==?b=522&mmsid=24522646&tm=1414983242&key=a35f9b7b45a1ea0c2819472999c4daba&platid=3&splatid=302&playid=0&tss=ios&vtype=13&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://g3.letv.cn/vod/v2/ODMvMjAvNTkvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMxMDE4Mjc3LWF2Yy0yMzEwODgtYWFjLTMyMDE4LTE5MTk2MC02NTI4Njk4LTc1ZGJlNzkyNWQyOTBkMzU4OTU0NWVkMjlmYzhlZWQ1LTE0MTQ4MzIxNjI3NTYubXA0?b=272&mmsid=24522646&tm=1414983242&key=827cf80a041f4cbc72b847a3b9f452a9&platid=3&splatid=302&playid=0&tss=ios&vtype=21&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://g3.letv.cn/vod/v2/ODcvNDkvOTcvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMxMDE4Mjc5LWF2Yy04ODU1NjEtYWFjLTY0MDA1LTE5MTk2MC0yMzAwMTA2OS00OTcwMGM0YzM3ZjJjZjgxMThhODg1MGFmMTE4NGYyZS0xNDE0ODMyNTUwNTM5Lm1wNA==?b=958&mmsid=24522646&tm=1414983242&key=32834b6114dcb637cfa6a488df112245&platid=3&splatid=302&playid=0&tss=ios&vtype=22&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "1080p",
+                                        "url": "http://g3.letv.cn/vod/v2/ODQvMzIvODUvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMxMDE4MjgwLWF2Yy0xNTEwNjQ4Ni1hYWMtMTI4MDAyLTE5MTk2MC0zNjU4NTMzOTUtNGZhZGFiY2MwMTEyZDc2N2I3NzEzYjMyNGVjZDdhNTYtMTQxNDgzNTM0OTM5Ny5tcDQ=?b=15243&mmsid=24522646&tm=1414983242&key=15ed39c21cb4054f9ee9e3699df9284b&platid=3&splatid=302&playid=0&tss=ios&vtype=19&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "1080p",
+                                        "url": "http://g3.letv.cn/vod/v2/ODQvMzIvODUvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMxMDE4MjgwLWF2Yy0xNTEwNjQ4Ni1hYWMtMTI4MDAyLTE5MTk2MC0zNjU4NTMzOTUtNGZhZGFiY2MwMTEyZDc2N2I3NzEzYjMyNGVjZDdhNTYtMTQxNDgzNTM0OTM5Ny5tcDQ=?b=15243&mmsid=24522646&tm=1414983242&key=15ed39c21cb4054f9ee9e3699df9284b&platid=3&splatid=302&playid=0&tss=ios&vtype=19&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至19集",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "周迅领衔主演, 郑晓龙执导《甄传》后大胆尝试~"
+                    },
+                    {
+                        "id": "9326",
+                        "title": "剑侠",
+                        "new": "Y",
+                        "index": "308",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_308_141448461984159.jpg",
+                        "playOrder": "low2high",
+                        "likeNum": 21247,
+                        "items": [
+                            {
+                                "id": "9795",
+                                "index": "38",
+                                "title": "剑侠 第38集预告",
+                                "videoHtml": "http://www.letv.com/ptv/vplay/21067142.html",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://g3.letv.cn/vod/v2/ODYvMzYvNDIvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMwOTczNDMyLWF2Yy00NzY4MDYtYWFjLTMyMDI2LTEyMDAwMC03NzY4OTIzLWRlYzBmMzk2MGYzZDgwZmZhNjE1MzQwNjQ0YmZiOTMwLTE0MTQ2OTA5ODk3MjUubXA0?b=517&mmsid=24492141&tm=1414983390&key=74aa523536d1c7551c7507791cee744b&platid=3&splatid=302&playid=0&tss=ios&vtype=13&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://g3.letv.cn/vod/v2/OTIvNTEvMS9sZXR2LXV0cy8xNC92ZXJfMDBfMTYtMzA5NzM0MzEtYXZjLTIyNzQ3OS1hYWMtMzIwMjYtMTIwMDAwLTQwMjg4NzItOTc3ZWVlYzY0M2NiNTljMWJmNTZiYThhODE1ZjE4ZWMtMTQxNDY5MDkxODI3Ni5tcDQ=?b=268&mmsid=24492141&tm=1414983390&key=4976c8a322ca410bc6ee3c561e19569f&platid=3&splatid=302&playid=0&tss=ios&vtype=21&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://g3.letv.cn/vod/v2/OTUvNi84OS9sZXR2LXV0cy8xNC92ZXJfMDBfMTYtMzA5NzM0MzMtYXZjLTg3MjM0Ny1hYWMtNjQwMDctMTIwMDAwLTE0MTgyMDI0LTk2YmRiMmMzYzMxZTgxZDUwMTE1MmI3MGMwNzJjMjU5LTE0MTQ2OTExNDU2MzUubXA0?b=945&mmsid=24492141&tm=1414983390&key=f96b51c0d12092ab5927dff1e9bd87b7&platid=3&splatid=302&playid=0&tss=ios&vtype=22&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至35集",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "讲述“八仙前传”\"神剧一哥\"简远信最偶像神话剧~"
+                    },
+                    {
+                        "id": "8662",
+                        "title": "绿箭侠 第三季",
+                        "new": "Y",
+                        "index": "307",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_294_141379118161869.jpg",
+                        "playOrder": "low2high",
+                        "likeNum": 26678,
+                        "items": [
+                            {
+                                "id": "9501",
+                                "index": "4",
+                                "title": "绿箭侠第三季 第4集",
+                                "videoHtml": "http://www.letv.com/ptv/vplay/21062818.html",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://g3.letv.cn/vod/v2/ODIvMjkvNTYvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMxMDQ3NzQxLWF2Yy00Nzg2NDctYWFjLTMyMDAyLTI1NDY3OTQtMTY1NTgwMDE4LTM2N2M5YTNlMTJiNmVmMzZhYzhhNDcyMDhlZjU0MWQ4LTE0MTQ5ODI1NzA1NTcubXA0?b=520&mmsid=24479241&tm=1414983415&key=44862a0c4807a4dc730d8826e90ace77&platid=3&splatid=302&playid=0&tss=ios&vtype=13&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://g3.letv.cn/vod/v2/ODcvMTAvMTEwL2xldHYtdXRzLzE0L3Zlcl8wMF8xNi0zMTA0Nzc0MC1hdmMtMjI5NTY3LWFhYy0zMjAwMi0yNTQ2Nzk0LTg2MjgyODIyLTJkZGIzZjYzODEyMTBmZGU1NjE3ZGQ5MWRjODNiYjc1LTE0MTQ5ODExNjIxNjcubXA0?b=271&mmsid=24479241&tm=1414983415&key=ee24fa2637aab287d3e1e6fc36ed4565&platid=3&splatid=302&playid=0&tss=ios&vtype=21&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://g3.letv.cn/vod/v2/OTUvMTIvMzkvbGV0di11dHMvMTQvdmVyXzAwXzE2LTMwOTYxNjQyLWF2Yy04NzY0NTMtYWFjLTY0MDAxLTI1NDY3OTQtMzAyNDE0MTUyLWFlYmJhMTk0OGRlNGUwZTZhYTc5ODQxMWJhYjc1ZTEyLTE0MTQ2NjEwMTc3NzQubXA0?b=949&mmsid=24479241&tm=1414983415&key=5aca819a7f41c26f3a552192c5be62d7&platid=3&splatid=302&playid=0&tss=ios&vtype=22&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至4集",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "莎拉之死牵出新反派Komodo奥利弗遇劲敌"
+                    }
+                ],
+                "start_time": "2014-08-14",
+                "itemCount": 61,
+                "channel": "1073750015",
+                "url": "http://tvnow-pic.tvesou.com/campaign_topic_v2_url_5_14144852393887.jpg"
+            },
+            {
+                "id": "31",
+                "index": "3",
+                "title": "综艺娱乐",
+                "bannerUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_bannerUrl_1_141275644351184.jpg",
+                "end_time": "2015-08-04",
+                "items": [
+                    {
+                        "id": "7848",
+                        "title": "奔跑吧兄弟",
+                        "new": "N",
+                        "index": "335",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_50_14134280184129.jpg",
+                        "playOrder": "high2low",
+                        "likeNum": 65679,
+                        "items": [
+                            {
+                                "id": "9704",
+                                "index": "18",
+                                "videoHtml": "http://www.letv.com/ptv/vplay/21075614.html",
+                                "title": "第四期完整：奔跑团勇闯SBS玩大逃杀 宝强“阵亡”号纸船被取笑",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://g3.letv.cn/vod/v2/OTkvMzIvMTMvbGV0di11dHMvMTgvdmVyXzAwXzE2LTMxMDA1OTg3LWF2Yy00NzEyNjEtYWFjLTMyMDAwLTUzMzU4ODAtMzQxNzk5NjQ2LWRkNTMzNTE2OTZjNzQ1Y2E5NTQ2YTY4MTBiMmE1NjU1LTE0MTQ3OTAzMzE1MzcubXA0?b=512&mmsid=24511135&tm=1414983221&key=11d57e3660a0cc91df670eb1f2032cdb&platid=3&splatid=302&playid=0&tss=ios&vtype=13&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://g3.letv.cn/vod/v2/ODUvMzcvNC9sZXR2LXV0cy8xOC92ZXJfMDBfMTYtMzEwMDU5ODYtYXZjLTIyNDU1Mi1hYWMtMzIwMDAtNTMzNTg4MC0xNzcyNDE4MzctMDQ3NjY3ODM5NzY1MzY2NWVhNzJmNjBhOTkxOWY0NTMtMTQxNDc4OTYzNDIxOC5tcDQ=?b=265&mmsid=24511135&tm=1414983221&key=7d19e16ee0a8ac0d76c0e41afe6f3865&platid=3&splatid=302&playid=0&tss=ios&vtype=21&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://g3.letv.cn/vod/v2/ODIvMzEvOTkvbGV0di11dHMvMTgvdmVyXzAwXzE2LTMxMDA1OTg4LWF2Yy04NjAzMDUtYWFjLTY0MDAwLTUzMzU4ODAtNjIyNjQyMzYwLTc0OTMxMTc2YWVlY2QyYWRmNmMyNzVjNzYxMDAyZjNkLTE0MTQ3OTE4Mjc0ODUubXA0?b=933&mmsid=24511135&tm=1414983221&key=b64e5dd384b2890e5d6edd914160eb25&platid=3&splatid=302&playid=0&tss=ios&vtype=22&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至14-10-31",
+                        "ttype": "1",
+                        "hot": "Y",
+                        "like": "N",
+                        "info2": "跑男中国版，上演\"夺宝大逃杀\""
+                    },
+                    {
+                        "id": "6521",
+                        "title": "中国梦之声",
+                        "new": "N",
+                        "index": "333",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_333_141275648512597.jpg",
+                        "playOrder": "low2high",
+                        "likeNum": 158003,
+                        "items": [
+                            {
+                                "id": "9796",
+                                "index": "7",
+                                "title": "韩红痛失小青峰飙泪离席 王艺洁放狠话暗讽小四",
+                                "videoHtml": "http://www.letv.com/ptv/vplay/21090080.html",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://g3.letv.cn/vod/v2/ODcvNTIvMTQvbGV0di11dHMvMTgvdmVyXzAwXzE2LTMxMDQ1NzEwLWF2Yy00Njc0NjQtYWFjLTMyMDAwLTUxOTUwMDAtMzMwMjY0NTg3LThhYTcwNWIwNmUwZjQ1NTEwZTJkNjIwNmYwMDNmMmU5LTE0MTQ5Nzc0ODUwOTgubXA0?b=508&mmsid=24540087&tm=1414983352&key=391f401a84960186140b3700764e1ad9&platid=3&splatid=302&playid=0&tss=ios&vtype=13&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "流畅",
+                                        "url": "http://g3.letv.cn/vod/v2/ODUvNTEvMTAyL2xldHYtdXRzLzE4L3Zlcl8wMF8xNi0zMTA0NTcwOS1hdmMtMjI0ODg2LWFhYy0zMjAwMC01MTk1MDAwLTE3MjczNDU3OC1jYWMzNmEwOTg0MGY1ZTgyMDJlMTg1NDVlNzVjMGI2My0xNDE0OTc3MzU1MTEzLm1wNA==?b=265&mmsid=24540087&tm=1414983352&key=f6bb7ca93cc0b176468151fe9cd5773d&platid=3&splatid=302&playid=0&tss=ios&vtype=21&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://g3.letv.cn/vod/v2/MTAwLzE3Lzk1L2xldHYtdXRzLzE4L3Zlcl8wMF8xNi0zMTA0NTcxMS1hdmMtODU4MzIxLWFhYy02NDAwMC01MTk1MDAwLTYwNDg3MDQyNy03ZDQ1NTY3OTRkZmIyOTgwOGYxOWUyNDA4OWRlMjJkMy0xNDE0OTc4NTMzNjM5Lm1wNA==?b=931&mmsid=24540087&tm=1414983352&key=c8ea5a726d2c079d142195e88f20e61a&platid=3&splatid=302&playid=0&tss=ios&vtype=22&cvid=351656049097&format=0&sign=mb&dname=mobile&expect=1&tag=mobile"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至14-11-02",
+                        "ttype": "1",
+                        "hot": "Y",
+                        "like": "N",
+                        "info2": "金马影帝转战歌坛变选手 甩头舞怪咖扮Gaga小齐爆灯"
+                    },
+                    {
+                        "id": "7934",
+                        "title": "明星到我家",
+                        "new": "Y",
+                        "index": "330",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_44_141342819740124.jpg",
+                        "playOrder": "low2high",
+                        "likeNum": 55593,
+                        "items": [
+                            {
+                                "id": "9708",
+                                "index": "27",
+                                "videoHtml": "",
+                                "title": "《明星到我家》第四期 秋瓷炫奉命照看孩子 熊孩子哭闹忙坏秋瓷炫",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://hot.vrs.sohu.com/ipad2059068_4625124484593_5260389.m3u8?plat=17"
+                                    },
+                                    {
+                                        "tag": "高清",
+                                        "url": "http://hot.vrs.sohu.com/ipad2059069_4625124484593_5260380.m3u8?plat=17"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至14-10-31",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "张柏芝学生装扮嫁入农家 锄地干农活获婆婆大赞"
+                    }
+                ],
+                "start_time": "2014-08-04",
+                "itemCount": 26,
+                "channel": "1073750015",
+                "url": "http://tvnow-pic.tvesou.com/campaign_topic_v2_url_3_141413621167699.jpg"
+            },
+            {
+                "id": "29",
+                "index": "2",
+                "title": "精彩体育",
+                "bannerUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_bannerUrl_3_141110338297944.jpg",
+                "end_time": "2015-08-01",
+                "items": [
+                    {
+                        "id": "6003",
+                        "title": "欧洲冠军杯",
+                        "new": "Y",
+                        "index": "80",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_36_14133771398694.jpg",
+                        "playOrder": "high2low",
+                        "likeNum": 65313,
+                        "items": [
+                            {
+                                "id": "8883",
+                                "index": "171",
+                                "videoHtml": "",
+                                "title": "小组赛第3轮首日40粒全进球 12分钟一次",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://v.iask.com/v_play_ipad.php?vid=136051032&tags=newsList_web"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "更新至20141023",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "皇马，曼联，巴萨，拜仁，米兰等"
+                    },
+                    {
+                        "id": "7872",
+                        "title": "欧洲杯预选赛",
+                        "new": "Y",
+                        "index": "78",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_40_141337706625565.jpg",
+                        "playOrder": "high2low",
+                        "likeNum": 11798,
+                        "items": [
+                            {
+                                "id": "8196",
+                                "index": "40",
+                                "videoHtml": "",
+                                "title": "C罗头球献压哨绝杀 葡萄牙客场小胜丹麦",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://v.iask.com/v_play_ipad.php?vid=135971348&tags=newsList_web"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "（10月09日）",
+                        "ttype": "1",
+                        "hot": "N",
+                        "like": "N",
+                        "info2": "英格兰、西班牙、德意志、意大利等"
+                    },
+                    {
+                        "id": "1060",
+                        "title": "鏖战西甲",
+                        "new": "N",
+                        "index": "65",
+                        "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_30_141337717851312.jpg",
+                        "playOrder": "high2low",
+                        "likeNum": 1196,
+                        "items": [
+                            {
+                                "id": "9132",
+                                "index": "92",
+                                "title": "1415赛季西甲第9轮 皇马vs巴萨 上半场",
+                                "videoHtml": "",
+                                "likeNum": 0,
+                                "videoId": "",
+                                "videos": [
+                                    {
+                                        "tag": "标清",
+                                        "url": "http://v.iask.com/v_play_ipad.php?vid=136090396"
+                                    }
+                                ],
+                                "vtype": "1",
+                                "like": "N"
+                            }
+                        ],
+                        "info1": "第9轮",
+                        "ttype": "1",
+                        "hot": "Y",
+                        "like": "N",
+                        "info2": "西班牙最高等级的职业足球联赛，也是欧洲及世界最高水平的职业足球联赛之一。"
+                    }
+                ],
+                "start_time": "2014-08-01",
+                "itemCount": 17,
+                "channel": "1073750015",
+                "url": "http://tvnow-pic.tvesou.com/campaign_topic_v2_url_2_141413630769489.jpg"
+            }
+        ]
+    },
+    "error_code": 1,
+    "msg": ""
+}
