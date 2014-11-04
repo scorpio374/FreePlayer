@@ -40,7 +40,7 @@
 	<string name="player_menu_about">About</string>
 	<string name="player_menu_decode_audio">Decode audio</string>
 	
-	<string name="tab_channel_name">中辉TV</string>
+	<string name="tab_channel_name">自由TV</string>
 	<string name="tab_find_name">发现</string>
 	
 	<string-array name="channel_type_array">

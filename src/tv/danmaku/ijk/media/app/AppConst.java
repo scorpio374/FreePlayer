@@ -19,6 +19,7 @@ public class AppConst {
 			"游戏频道","地方频道","添加频道",
 			};
 	
+
 	public static String[][] hotChannelMap = {
 		{"CCTV5-HD","http://v14.tv.cctv5.cctv.com/approve/live?channel=CCTV5HD&type=ipsd"},
 		{"CCTV-新闻","http://vapptime.cntv.wscdns.com/cache/24_/seg0/index.m3u8"},
