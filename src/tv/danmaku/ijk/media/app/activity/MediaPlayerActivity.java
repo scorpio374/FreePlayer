@@ -43,7 +43,7 @@ public class MediaPlayerActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mediaplayer);
+		setContentView(R.layout.activity_mediaplayer);
 
 		initView();
 		initParams();

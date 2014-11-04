@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<!--     <item
+        android:id="@+id/action_channel"
+        android:actionProviderClass="tv.danmaku.ijk.media.app.widget.ChannelActionProvider"
+        android:showAsAction="always"
+        android:title="卫视频道">
+    </item> -->
+    
+<!--     <item
+        android:id="@+id/action_search"
+        android:showAsAction="always"
+        android:title="新闻资讯"/> -->
+</menu>

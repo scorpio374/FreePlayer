@@ -1,4 +1,4 @@
-package tv.danmaku.ijk.media.app.fragment;
+package tv.danmaku.ijk.media.app.activity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,108 +10,75 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import tv.danmaku.ijk.media.app.activity.ChannelListActivity;
-import tv.danmaku.ijk.media.app.activity.NewsActivity;
 import tv.danmaku.ijk.media.app.adapter.NewsProgramAdapter;
 import tv.danmaku.ijk.media.app.bean.NewsProgramBean;
 import tv.danmaku.ijk.media.app.bean.ProgramData;
 import tv.danmaku.ijk.media.app.bean.ProgramItem;
+import android.app.ActionBar;
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
+import android.support.v4.app.TaskStackBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import cn.sz.free.player.R;
 
-public class FindFragment extends Fragment {
+public class NewsActivity extends Activity {
 
 	private ListView mListView;
-	private NewsProgramAdapter mNewsProgramAdapter;
-	private ScrollView mScrollView;
-	private int scrollX = 0;
-	private int scrollY = 0;
-
-	Button hotButton;
-	Button shakeButton;
-	Button beautyButton;
-	Button webresourceButton;
+	private Button headerButton;
 	
 	@Override
-	public void onAttach(Activity activity) {
-		// TODO Auto-generated method stub
-		super.onAttach(activity);
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		View v = inflater.inflate(R.layout.fragment_find, null);
-		initView(v);
-		initParams();
-		return v;
-	}
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-	}
-	
-	@Override
-	public void onPause() {
-		// TODO Auto-generated method stub
-		scrollX = mScrollView.getScrollX();
-		scrollY = mScrollView.getScrollY();
-		super.onPause();
-	}
-	
-	@Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-		mScrollView.smoothScrollTo(scrollX, scrollY);
-		mScrollView.scrollTo(scrollX, scrollY);
-		mScrollView.post(new Runnable() {   
-		    public void run() {  
-		    	mScrollView.scrollTo(scrollX, scrollY);  
-		    }   
-		});
-		super.onResume();
-	}
-
-	private void initView(View v) {
-		// TODO Auto-generated method stub
-		mListView = (ListView) v.findViewById(R.id.find_listview);
-		mScrollView = (ScrollView) v.findViewById(R.id.find_scrollview);
-		hotButton = (Button)v.findViewById(R.id.find_hot_button);
-		shakeButton = (Button)v.findViewById(R.id.find_shake_button);
-		beautyButton = (Button)v.findViewById(R.id.find_beauty_button);
-		webresourceButton = (Button)v.findViewById(R.id.find_webresource_button);
-	}
-
-	private void initParams() {
-		// TODO Auto-generated method stub
-		String json = getFileFromAssets("yuntu_find_portal_json_20141103.txt");
-		// Log.d("Debug","json:"+json);
-		ArrayList<ProgramData> programDatas = parseJson(json);
-		mNewsProgramAdapter = new NewsProgramAdapter(getActivity(), programDatas);
-		mListView.setAdapter(mNewsProgramAdapter);
-		mListView.setOnItemClickListener(mOnItemClickListener);
-		mNewsProgramAdapter.notifyDataSetChanged();
+		setContentView(R.layout.activity_news);
 		
-		hotButton.setOnClickListener(mOnClickListener);
+		initView();
+
+		ActionBar actionBar = getActionBar();
+		if (actionBar != null) {
+			actionBar.setDisplayHomeAsUpEnabled(false);
+			actionBar.setHomeButtonEnabled(true);
+			actionBar.setDisplayShowHomeEnabled(true);
+			actionBar.setDisplayShowCustomEnabled(true);
+			
+			LayoutInflater inflator = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	        View v = inflator.inflate(R.layout.actionbar_news, null);
+	        ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+	        actionBar.setCustomView(v,layout);
+		}
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		getMenuInflater().inflate(R.menu.menu_news, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	private void initView() {
+		// TODO Auto-generated method stub
+		mListView = (ListView)findViewById(R.id.news_listview);
+		View headerView = getLayoutInflater().inflate(R.layout.news_listview_headerview, null);
+		mListView.addHeaderView(headerView);
+		
+		String json = getFileFromAssets("yuntu_find_portal_json_20141103.txt");
+		ArrayList<ProgramData> programDatas = parseJson(json);
+		NewsProgramAdapter mNewsProgramAdapter = new NewsProgramAdapter(this, programDatas);
+		mListView.setAdapter(mNewsProgramAdapter);
+		mNewsProgramAdapter.notifyDataSetChanged();
+	}
+	
 	private ArrayList<ProgramData> parseJson(String json) {
 		// TODO Auto-generated method stub
 		NewsProgramBean newsProgramBean = null;
@@ -164,7 +131,7 @@ public class FindFragment extends Fragment {
 		Log.d("Debug", "parseJson end");
 		return programDatas;
 	}
-
+	
 	private String getFileFromAssets(String fileName) {
 		try {
 			InputStream in = getResources().getAssets().open(fileName);
@@ -182,41 +149,28 @@ public class FindFragment extends Fragment {
 		}
 		return null;
 	}
-	
-	private OnItemClickListener mOnItemClickListener = new OnItemClickListener() {
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			// TODO Auto-generated method stub
-			Intent intent = new Intent(getActivity(),NewsActivity.class);
-			startActivity(intent);
-		}
-	};
-	
-	private OnClickListener mOnClickListener = new OnClickListener() {
-		
-		@Override
-		public void onClick(View view) {
-			// TODO Auto-generated method stub
-			switch (view.getId()) {
-			case R.id.find_hot_button:
-				Intent intent = new Intent(getActivity(),ChannelListActivity.class);
-				intent.putExtra("channelType", 0);
-				startActivity(intent);
-				break;
-				
-			case R.id.find_shake_button:
-				break;
-				
-			case R.id.find_beauty_button:
-				break;
-				
-			case R.id.find_webresource_button:
-				break;
 
-			default:
-				break;
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch (item.getItemId()) {
+
+		case android.R.id.home:
+			Intent upIntent = NavUtils.getParentActivityIntent(this);
+			if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
+				TaskStackBuilder.create(this)
+						.addNextIntentWithParentStack(upIntent)
+						.startActivities();
+			} else {
+				upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				NavUtils.navigateUpTo(this, upIntent);
 			}
+			return true;
+
+		default:
+			Log.d("Debug", "onOptionsItemSelected default");
+			return super.onOptionsItemSelected(item);
 		}
-	};
+	}
 }

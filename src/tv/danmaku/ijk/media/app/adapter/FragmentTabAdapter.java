@@ -1,13 +1,14 @@
 package tv.danmaku.ijk.media.app.adapter;
 
+import java.util.List;
+
+import cn.sz.free.player.R;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-import java.util.List;
-
-import tv.danmaku.ijk.media.demo.R;
 
 /**
  * Created with IntelliJ IDEA. Author: wangjie email:tiantian.china.2@gmail.com
@@ -35,9 +36,7 @@ public class FragmentTabAdapter implements RadioGroup.OnCheckedChangeListener {
 				.beginTransaction();
 		ft.add(fragmentContentId, fragments.get(0));
 		ft.commit();
-
 		rgs.setOnCheckedChangeListener(this);
-
 	}
 
 	@Override

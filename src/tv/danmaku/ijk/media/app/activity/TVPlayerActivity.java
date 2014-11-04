@@ -62,7 +62,7 @@ public class TVPlayerActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tvplayer);
+		setContentView(R.layout.activity_tvplayer);
 
 		initView();
 		initParams();

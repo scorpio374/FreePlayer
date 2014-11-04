@@ -58,6 +58,7 @@
         <item name="android:paddingTop">15dip</item>
         <item name="android:paddingBottom">5dip</item>
         <item name="android:textColor">@color/text_color</item>
+        <item name="android:background">#FFFFFF</item>
     </style>
     <!--
                <item name="android:layout_marginTop">30dp</item>

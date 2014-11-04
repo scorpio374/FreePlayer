@@ -30,12 +30,13 @@ public class PortalActivity extends FragmentActivity implements
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
 		super.onCreate(arg0);
-		setContentView(R.layout.portal_activity);
+		setContentView(R.layout.activity_portal);
 		fragments.add(new ChannelFragment());
 		fragments.add(new FindFragment());
 		fragments.add(new MyFragment());
 
 		mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+		((RadioButton) findViewById(R.id.radio_channel)).setChecked(true);
 		FragmentTabAdapter tabAdapter = new FragmentTabAdapter(this, fragments,
 				R.id.realtabcontent, mRadioGroup);
 		tabAdapter

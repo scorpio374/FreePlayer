@@ -1,0 +1,436 @@
+{
+    "data": {
+        "count": 37,
+        "topicProp": {
+            "id": "32",
+            "title": "新闻资讯",
+            "index": "6",
+            "bannerUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_bannerUrl_6_141275739203087.jpg",
+            "end_time": "2015-07-14",
+            "start_time": "2014-07-18",
+            "channel": "1073750015",
+            "url": "http://tvnow-pic.tvesou.com/campaign_topic_v2_url_6_14144831253768.jpg"
+        },
+        "data": [
+            {
+                "id": "2015",
+                "title": "今日头条",
+                "new": "Y",
+                "index": "1000",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_1000_141448228135212.jpg",
+                "likeNum": 16469,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "9787",
+                        "index": "1158",
+                        "title": "太空船2号”事故：“维珍”创始人视察现场 承诺“全额退票”",
+                        "videoHtml": "http://v.youku.com/v_show/id_XODE3MjkxMjE2.html",
+                        "likeNum": 0,
+                        "videoId": "",
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=cCaVHkCFVMoH5CLWiT8bMyqwcnEIXJZ1gmqG%2FIg5SMZ%2BPerQmDnUwA%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=241498247119112d6b667&token=1757&ts=1414982471&vid=XODE3MjkxMjE2&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=cCaVHkCFVMoH5CLWiT8bMyqwcnEIXJZ1gmqG%2FIg5SMZ%2BPerQmDnUwA%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=241498247119112d6b667&token=1757&ts=1414982471&vid=XODE3MjkxMjE2&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=cCaVHkCFVMoH5CLWiT8bMyqwcnEIXJZ1gmqG%2FIg5SMZ%2BPerQmDnUwA%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=241498247119112d6b667&token=1757&ts=1414982471&vid=XODE3MjkxMjE2&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-11-03",
+                "ttype": "1",
+                "hot": "Y",
+                "like": "N",
+                "info2": "国际国内新闻资讯速递"
+            },
+            {
+                "id": "4780",
+                "title": "娱乐星资讯",
+                "new": "N",
+                "index": "680",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_680_141387795859998.jpg",
+                "likeNum": 9795,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "9792",
+                        "index": "330",
+                        "title": "兔女郎空运来台 神秘三角洲羞见客",
+                        "videoHtml": "http://v.youku.com/v_show/id_XODE3Mjk5MjQ0.html",
+                        "likeNum": 0,
+                        "videoId": "",
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dCaVHkCFVM0B5CTbiD8bMy3gfHAJXJZ1gmqG%2FIg5BcZ%2BKejQmznTzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=641498231174012d12876&token=2729&ts=1414982311&vid=XODE3Mjk5MjQ0&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dCaVHkCFVM0B5CTbiD8bMy3gfHAJXJZ1gmqG%2FIg5BcZ%2BKejQmznTzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=641498231174012d12876&token=2729&ts=1414982311&vid=XODE3Mjk5MjQ0&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dCaVHkCFVM0B5CTbiD8bMy3gfHAJXJZ1gmqG%2FIg5BcZ%2BKejQmznTzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=641498231174012d12876&token=2729&ts=1414982311&vid=XODE3Mjk5MjQ0&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-11-03",
+                "ttype": "1",
+                "hot": "Y",
+                "like": "N",
+                "info2": "传递最新,最热,最精彩的娱乐新闻,明星八卦~"
+            },
+            {
+                "id": "8705",
+                "title": "聚焦十八届四中全会",
+                "new": "Y",
+                "index": "40",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_40_141387487197537.jpg",
+                "likeNum": 5675,
+                "playOrder": "low2high",
+                "items": [
+                    {
+                        "id": "9129",
+                        "index": "30",
+                        "title": "如何让法治成为信仰？",
+                        "videoHtml": "http://v.youku.com/v_show/id_XODEwODI1OTI0.html",
+                        "likeNum": 0,
+                        "videoId": "",
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVM0H5iTbjT8bYyiwdHQLXJZ1gmrC%2FqYbAcRAMejQnj%2FTxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149823737451244b034&token=7121&ts=1414982373&vid=XODEwODI1OTI0&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVM0H5iTbjT8bYyiwdHQLXJZ1gmrC%2FqYbAcRAMejQnj%2FTxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149823737451244b034&token=7121&ts=1414982373&vid=XODEwODI1OTI0&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVM0H5iTbjT8bYyiwdHQLXJZ1gmrC%2FqYbAcRAMejQnj%2FTxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149823737451244b034&token=7121&ts=1414982373&vid=XODEwODI1OTI0&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-10-24",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "从不敢腐到不能腐:四中全会清理“法外之地”"
+            },
+            {
+                "id": "1148",
+                "title": "埃博拉疫情持续肆虐",
+                "new": "N",
+                "index": "38",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_52_141078263267778.jpg",
+                "likeNum": 5633,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "8675",
+                        "index": "74",
+                        "title": "西非外全球首例埃博拉患者成功战胜病毒",
+                        "videoHtml": "",
+                        "likeNum": 0,
+                        "videoId": "",
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://v.iask.com/v_play_ipad.php?vid=136030017&tags=newsList_web"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-10-17",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "全球已有4447人死于埃博拉 世卫组织吁加强防御"
+            },
+            {
+                "id": "7766",
+                "title": "广东爆发登革热疫情",
+                "new": "N",
+                "index": "34",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_34_141282094798545.jpg",
+                "likeNum": 5621,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "8377",
+                        "index": "26",
+                        "title": "深圳确诊222例登革热 专家建议中小学减少秋游活动",
+                        "videoHtml": "http://v.youku.com/v_show/id_XODA0ODQ1NDU2.html",
+                        "likeNum": 0,
+                        "videoId": "",
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dSaVHkCFVM0B5SLdiT8bMSq2fXMMXJZ1gm6F%2FqYDAcVQLerQmznXzw%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=741498231012112f6d943&token=2768&ts=1414982310&vid=XODA0ODQ1NDU2&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dSaVHkCFVM0B5SLdiT8bMSq2fXMMXJZ1gm6F%2FqYDAcVQLerQmznXzw%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=741498231012112f6d943&token=2768&ts=1414982310&vid=XODA0ODQ1NDU2&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=dSaVHkCFVM0B5SLdiT8bMSq2fXMMXJZ1gm6F%2FqYDAcVQLerQmznXzw%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=741498231012112f6d943&token=2768&ts=1414982310&vid=XODA0ODQ1NDU2&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-10-17",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "往年同期水平10倍,面临20年来最严重局面"
+            },
+            {
+                "id": "7614",
+                "title": "云南景谷6.6级地震",
+                "new": "N",
+                "index": "33",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_682_141273216709869.jpg",
+                "likeNum": 22623,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "7862",
+                        "index": "22",
+                        "title": "追踪云南景谷6.6级地震救援",
+                        "videoHtml": "http://v.youku.com/v_show/id_XODAwMTY2OTA4.html",
+                        "likeNum": 0,
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVMoD7SfciT8bbyngfHJeXJZ1gm7C%2FLYLAsRAOezQmD7Yxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149824384311285285a&token=1091&ts=1414982438&vid=XODAwMTY2OTA4&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVMoD7SfciT8bbyngfHJeXJZ1gm7C%2FLYLAsRAOezQmD7Yxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149824384311285285a&token=1091&ts=1414982438&vid=XODAwMTY2OTA4&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVMoD7SfciT8bbyngfHJeXJZ1gm7C%2FLYLAsRAOezQmD7Yxg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=84149824384311285285a&token=1091&ts=1414982438&vid=XODAwMTY2OTA4&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-10-09",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "10月7日21时49分，云南普洱市景谷县发生6.6级地震"
+            },
+            {
+                "id": "6216",
+                "title": "王菲谢霆锋复合",
+                "new": "N",
+                "index": "32",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_682_141130057791386.jpg",
+                "likeNum": 5744,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "6778",
+                        "title": "“锋菲恋”复合后王菲首次露面 被拍显淡定",
+                        "videoHtml": "",
+                        "index": "16",
+                        "likeNum": 0,
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://hot.vrs.sohu.com/ipad2009152_4622022497027_5210473.m3u8?plat=17"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://hot.vrs.sohu.com/ipad2009153_4622022497029_5210474.m3u8?plat=17"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-09-24",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "旧情复燃 公寓密会四天亲密接吻"
+            },
+            {
+                "id": "6377",
+                "title": "台风“凤凰”来袭",
+                "new": "N",
+                "index": "31",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_682_141143957072893.jpg",
+                "likeNum": 5625,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "6484",
+                        "index": "23",
+                        "title": "上海25年来台风首次正面登陆 风雨小于预期",
+                        "videoHtml": "http://v.youku.com/v_show/id_XNzg5MjY3MzA0.html",
+                        "likeNum": 0,
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=ciaVHkCFVM0A5iLbgD8bYHnmfX8MXJZ0vEiA%2FIgLA8ZuOejQmDfRwQ%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=0414982303148127e4983&token=1906&ts=1414982303&vid=XNzg5MjY3MzA0&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=ciaVHkCFVM0A5iLbgD8bYHnmfX8MXJZ0vEiA%2FIgLA8ZuOejQmDfRwQ%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=0414982303148127e4983&token=1906&ts=1414982303&vid=XNzg5MjY3MzA0&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=ciaVHkCFVM0A5iLbgD8bYHnmfX8MXJZ0vEiA%2FIgLA8ZuOejQmDfRwQ%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=0414982303148127e4983&token=1906&ts=1414982303&vid=XNzg5MjY3MzA0&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-09-23",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "台风“凤凰”登陆浙江,将进入上海"
+            },
+            {
+                "id": "6185",
+                "title": "阿里巴巴登陆纽交所",
+                "new": "N",
+                "index": "30",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_682_141117440782186.jpg",
+                "likeNum": 5643,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "6197",
+                        "index": "31",
+                        "title": "阿里巴巴上市首日暴涨38% 市值超2300亿美元",
+                        "videoHtml": "http://v.youku.com/v_show/id_XNzg2NTAyMjc2.html",
+                        "likeNum": 0,
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVMwH4ircjD8bNCzgdCYHXJZ0vEiH%2F7YTScZ%2BG%2BrQnzrZzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=841498227793412c020a8&token=6489&ts=1414982277&vid=XNzg2NTAyMjc2&type=mp4"
+                            },
+                            {
+                                "tag": "流畅",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVMwH4ircjD8bNCzgdCYHXJZ0vEiH%2F7YTScZ%2BG%2BrQnzrZzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=841498227793412c020a8&token=6489&ts=1414982277&vid=XNzg2NTAyMjc2&type=flv"
+                            },
+                            {
+                                "tag": "高清",
+                                "url": "http://pl.youku.com/playlist/m3u8?ctype=12&ep=eiaVHkCFVMwH4ircjD8bNCzgdCYHXJZ0vEiH%2F7YTScZ%2BG%2BrQnzrZzg%3D%3D&ev=1&keyframe=1&oip=2032688683&sid=841498227793412c020a8&token=6489&ts=1414982277&vid=XNzg2NTAyMjc2&type=hd2"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-09-20",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "创美股最大IPO,马云成中国新首富"
+            },
+            {
+                "id": "5822",
+                "title": "苏格兰公投",
+                "new": "N",
+                "index": "29",
+                "picUrl": "http://tvnow-pic.tvesou.com/campaign_topic_v2_picUrl_688_141110442012653.jpg",
+                "likeNum": 5650,
+                "playOrder": "high2low",
+                "items": [
+                    {
+                        "id": "6175",
+                        "title": "卡梅伦\"捡回一条命\" 萨尔蒙德断国父梦",
+                        "videoHtml": "",
+                        "index": "14",
+                        "likeNum": 0,
+                        "videos": [
+                            {
+                                "tag": "标清",
+                                "url": "http://v.iask.com/v_play_ipad.php?vid=135722520&tags=newsList_web"
+                            }
+                        ],
+                        "vtype": "1",
+                        "like": "N"
+                    }
+                ],
+                "info1": "更新至14-09-19",
+                "ttype": "1",
+                "hot": "N",
+                "like": "N",
+                "info2": "420万苏格兰人公投"
+            }
+        ],
+        "banners": [
+            {
+                "id": "39",
+                "index": "40",
+                "bannerAlbumId": "2015",
+                "bannerTitle": "昆明暴恐案二审宣判现场 3人死刑1人无期",
+                "bannerVideoId": "9700",
+                "newBannerUrl": "http://tvnow-pic.tvesou.com/topic_banner_newBannerUrl_40_141475063313675.jpg"
+            },
+            {
+                "id": "38",
+                "index": "38",
+                "bannerAlbumId": "2015",
+                "bannerTitle": "广州正式发布埃博拉疫情防控通告",
+                "bannerVideoId": "9453",
+                "newBannerUrl": "http://tvnow-pic.tvesou.com/topic_banner_newBannerUrl_38_141457821111231.jpg"
+            },
+            {
+                "id": "37",
+                "index": "36",
+                "bannerAlbumId": "2015",
+                "bannerTitle": "美国“天鹅座”飞船发射6秒后爆炸",
+                "bannerVideoId": "9404",
+                "newBannerUrl": "http://tvnow-pic.tvesou.com/topic_banner_newBannerUrl_36_141455237176747.jpg"
+            },
+            {
+                "id": "28",
+                "index": "32.0",
+                "bannerAlbumId": "2015",
+                "bannerTitle": "沈阳战区陆空大规模军演有何看点?",
+                "bannerVideoId": "9240",
+                "newBannerUrl": "http://tvnow-pic.tvesou.com/topic_banner_newBannerUrl_32_141447889167954.jpg"
+            },
+            {
+                "id": "23",
+                "index": "30.0",
+                "bannerAlbumId": "2015",
+                "bannerTitle": "云南江城：非法盗卖食用野生动物成集市",
+                "bannerVideoId": "9317",
+                "newBannerUrl": "http://tvnow-pic.tvesou.com/topic_banner_newBannerUrl_29_14144810873877.jpg"
+            }
+        ]
+    },
+    "error_code": 1,
+    "msg": ""
+}

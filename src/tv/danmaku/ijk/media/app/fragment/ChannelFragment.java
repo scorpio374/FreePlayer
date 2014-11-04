@@ -64,7 +64,7 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	private NoScrollGridView gridView;
 	private ChannelBoxAdapter channelBoxAdapter;
 	private List<ChannelBoxBean> mChannelBoxList;
-	private ScrollView scrollView;
+	private ScrollView mScrollView;
 	private int scrollX = 0;
 	private int scrollY = 0;
 	
@@ -106,11 +106,11 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	public void onResume() {
 		// TODO Auto-generated method stub
 		Log.d("Debug","onResume:"+scrollX+" "+scrollY);
-		scrollView.smoothScrollTo(scrollX, scrollY);
-		scrollView.scrollTo(scrollX, scrollY);
-		scrollView.post(new Runnable() {   
+		mScrollView.smoothScrollTo(scrollX, scrollY);
+		mScrollView.scrollTo(scrollX, scrollY);
+		mScrollView.post(new Runnable() {   
 		    public void run() {  
-		    	scrollView.scrollTo(scrollX, scrollY);  
+		    	mScrollView.scrollTo(scrollX, scrollY);  
 		    }   
 		});  
 		super.onResume();
@@ -120,13 +120,13 @@ public class ChannelFragment extends Fragment implements OnPageChangeListener{
 	public void onPause() {
 		// TODO Auto-generated method stub
 		Log.d("Debug","onPause");
-		scrollX = scrollView.getScrollX();
-		scrollY = scrollView.getScrollY();
+		scrollX = mScrollView.getScrollX();
+		scrollY = mScrollView.getScrollY();
 		super.onPause();
 	}
 	
 	private void initView(View v){
-		scrollView = (ScrollView)v.findViewById(R.id.channel_scrollview);
+		mScrollView = (ScrollView)v.findViewById(R.id.channel_scrollview);
 		initViewPager(v);
 		initGridView(v);
 	}

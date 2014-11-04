@@ -1,6 +1,5 @@
 package tv.danmaku.ijk.media.app.bean;
 
-import android.widget.ImageView;
 
 public class ChannelBoxBean {
 	private String boxName;

@@ -21,7 +21,6 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.SpinnerAdapter;
 import cn.sz.free.player.R;
 
 public class ChannelListActivity extends Activity {
@@ -74,7 +73,7 @@ public class ChannelListActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
-		getMenuInflater().inflate(R.menu.activity_actionbar, menu);
+		getMenuInflater().inflate(R.menu.menu_channellist, menu);
 		MenuItem searchItem = menu.findItem(R.id.action_search);
 		SearchView searchView = (SearchView) searchItem.getActionView();
 		return super.onCreateOptionsMenu(menu);
