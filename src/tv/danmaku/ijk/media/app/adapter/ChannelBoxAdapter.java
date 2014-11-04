@@ -3,7 +3,6 @@ package tv.danmaku.ijk.media.app.adapter;
 import java.util.List;
 
 import tv.danmaku.ijk.media.app.bean.ChannelBoxBean;
-import tv.danmaku.ijk.media.demo.R;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import cn.sz.free.player.R;
 
 public class ChannelBoxAdapter extends BaseAdapter {
 

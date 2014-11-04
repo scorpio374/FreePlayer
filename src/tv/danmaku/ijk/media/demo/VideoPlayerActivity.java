@@ -16,22 +16,17 @@
 
 package tv.danmaku.ijk.media.demo;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
-
-import org.apache.http.client.utils.URIUtils;
 
 import tv.danmaku.ijk.media.widget.MediaController;
 import tv.danmaku.ijk.media.widget.VideoView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import cn.sz.free.player.R;
 
 public class VideoPlayerActivity extends Activity {
 	private VideoView mVideoView;

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import cn.sz.free.player.R;
 
 class FileExplorerAdapter extends BaseAdapter {
 	

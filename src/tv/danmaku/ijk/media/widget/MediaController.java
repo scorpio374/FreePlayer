@@ -20,7 +20,6 @@ package tv.danmaku.ijk.media.widget;
 
 import java.util.Locale;
 
-import tv.danmaku.ijk.media.demo.R;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -43,6 +42,7 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import cn.sz.free.player.R;
 
 /**
  * A view containing controls for a MediaPlayer. Typically contains the buttons

@@ -1,7 +1,6 @@
 package tv.danmaku.ijk.media.app.fragment;
 
 import tv.danmaku.ijk.media.demo.FFMpegFileExplorer;
-import tv.danmaku.ijk.media.demo.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import cn.sz.free.player.R;
 
 public class MyFragment extends Fragment{
 	

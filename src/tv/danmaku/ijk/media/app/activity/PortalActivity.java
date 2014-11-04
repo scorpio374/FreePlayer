@@ -3,7 +3,6 @@ package tv.danmaku.ijk.media.app.activity;
 import tv.danmaku.ijk.media.app.fragment.ChannelFragment;
 import tv.danmaku.ijk.media.app.fragment.FindFragment;
 import tv.danmaku.ijk.media.app.fragment.MyFragment;
-import tv.danmaku.ijk.media.demo.R;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +12,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import cn.sz.free.player.R;
 
 public class PortalActivity extends FragmentActivity implements OnCheckedChangeListener{
 	

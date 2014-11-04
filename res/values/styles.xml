@@ -3,13 +3,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -17,8 +17,8 @@
     <style name="AppTheme" parent="AppBaseTheme"></style>
 
     <style name="FullscreenTheme" parent="android:Theme.NoTitleBar.Fullscreen"></style>
-    
-     <style name="MediaController_SeekBar" parent="android:Widget.SeekBar">
+
+    <style name="MediaController_SeekBar" parent="android:Widget.SeekBar">
         <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>
         <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>
         <item name="android:minHeight">13dip</item>
@@ -28,13 +28,13 @@
         <item name="android:paddingLeft">16dip</item>
         <item name="android:paddingRight">16dip</item>
     </style>
- 
+
     <style name="MediaController_Text">
         <item name="android:textColor">#ffffffff</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    
+
     <style name="tab_radiobutton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -45,8 +45,8 @@
         <item name="android:paddingTop">4dip</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
-    
-     <style name="FindButtonTheme">
+
+    <style name="FindButtonTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
@@ -59,16 +59,18 @@
         <item name="android:paddingBottom">5dip</item>
         <item name="android:textColor">@color/text_color</item>
     </style>
-<!--           <item name="android:layout_marginTop">30dp</item>
-        <item name="android:layout_marginBottom">15dp</item> -->
-               
-     <style name="my_item_button">
-         <item name="android:layout_width">match_parent</item>
-         <item name="android:layout_height">wrap_content</item>
-         <item name="android:layout_marginTop">10dip</item>
-         <item name="android:layout_marginBottom">10dip</item>
-         <item name="android:gravity">center_horizontal</item>
-         <item name="android:background">@null</item>
-     </style>
+    <!--
+               <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    -->
+
+    <style name="my_item_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:layout_marginBottom">10dip</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@null</item>
+    </style>
 
 </resources>
