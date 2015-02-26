@@ -19,7 +19,8 @@ public class PortalActivity extends Activity implements OnClickListener{
 //	private String testUrl = "http://live.itv.doplive.com.cn/live347/index_512k.m3u8?date=20140910232707&uid=0&rnd=2014091023270725442&appk=4MUAHmQFf1YR&key=3ce95e5bf0dd8e336e8ce142851119d8&rnd2=52597";
 //	private String testUrl = "http://10.48.114.12:8007/TV/0/00000001000000050000000000000002/4.m3u8?TVODStartTime=1410364800&TVODEndTime=1410368400";
 //	private String testUrl = "http://zb.v.qq.com:1863/?progid=3900155972&ostype=ios";
-	private String testUrl = "http://vapptime.cntv.wscdns.com/cache/24_/seg0/index.m3u8";
+//	private String testUrl = "http://url.52itv.cn/vlive/pptv/hnws.m3u8";
+	private String testUrl = "http://124.161.62.196:8007/TV/0/20000001000000050000000000000120/20.m3u8?EPGToken=$14.28.139.179$1416207973$YTIxZjE4NDQ0YWEwODQ3ZWMyMDQ3ZWEwYjIxZDM0ZTA=m";
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class PortalActivity extends Activity implements OnClickListener{
 		fileSelect.setOnClickListener(this);
 		
 		inputUrl.setText(testUrl);
+		urlPlay.requestFocus();
 	}
 
 

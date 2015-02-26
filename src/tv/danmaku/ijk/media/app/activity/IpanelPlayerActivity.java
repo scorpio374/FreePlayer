@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-package tv.danmaku.ijk.media.demo;
+package tv.danmaku.ijk.media.app.activity;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-import tv.danmaku.ijk.media.app.media.OTTMediaPlayer;
 import tv.danmaku.ijk.media.widget.MediaController;
-import tv.danmaku.ijk.media.widget.VideoView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.SurfaceView;
 import android.view.View;
+import android.widget.MediaController.MediaPlayerControl;
 import cn.sz.free.player.R;
 
-public class VideoPlayerActivity extends Activity {
-	private OTTMediaPlayer mVideoView;
-	private View mBufferingIndicator;
-	private MediaController mMediaController;
+import com.ipanel.join.mediaplayer.MediaControllerCallback;
+import com.ipanel.join.mediaplayer.VideoSurface;
 
+public class IpanelPlayerActivity extends Activity {
+	private VideoSurface mVideoSurface;
+	private View mBufferingIndicator;
+	private MediaControllerCallback mMediaControllerCallback;
+	private MediaController mMediaController;
 	private String mVideoPath;
-	private SurfaceView mSurfaceView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_player);
+		setContentView(R.layout.activity_ipanelplayer);
 
 //		mVideoPath = "http://192.168.3.100/hls/test/test.m3u8";
 //		mVideoPath = "file:/mnt/sdcard/Movies/stephen_zhou.ts";
@@ -70,12 +70,68 @@ public class VideoPlayerActivity extends Activity {
 
 		mBufferingIndicator = findViewById(R.id.buffering_indicator);
 		mMediaController = new MediaController(this);
+		mMediaControllerCallback = new MediaControllerCallback() {
+			
+			@Override
+			public void show(int arg0) {
+				// TODO Auto-generated method stub
+				mMediaController.show();
+			}
+			
+			@Override
+			public void show() {
+				// TODO Auto-generated method stub
+				mMediaController.show();
+			}
+			
+			@Override
+			public void setMediaPlayer(MediaPlayerControl arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void setLoadingView(View arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void setEnabled(boolean arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onInfo(int arg0, int arg1) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onBuffering(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public boolean isShowing() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public void hide() {
+				// TODO Auto-generated method stub
+				mMediaController.hide();
+			}
+		};
 
-		mSurfaceView = (SurfaceView) findViewById(R.id.video_view);
-		mVideoView = new OTTMediaPlayer(this, mSurfaceView);
-		mVideoView.setMediaController(mMediaController);
-		mVideoView.setMediaBufferingIndicator(mBufferingIndicator);
-		mVideoView.setVideoPath(mVideoPath);
-		mVideoView.start();
+		mVideoSurface = (VideoSurface) findViewById(R.id.video_view);
+		mVideoSurface.setMediaController(mMediaControllerCallback);
+//		mVideoSurface.setMediaBufferingIndicator(mBufferingIndicator);
+		mVideoSurface.setVideoPath(mVideoPath);
+		mVideoSurface.requestFocus();
+		mVideoSurface.start();
 	}
 }

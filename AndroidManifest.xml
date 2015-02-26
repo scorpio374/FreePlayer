@@ -21,7 +21,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.NoTitleBar">
+        android:theme="@android:style/Theme.NoTitleBar" >
         <activity
             android:name="tv.danmaku.ijk.media.demo.VideoPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -29,51 +29,52 @@
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
         </activity>
-        
         <activity
             android:name="tv.danmaku.ijk.media.demo.PortalActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name" >
-     	<!-- 	 <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            </intent-filter>
+            -->
         </activity>
-        
         <activity
             android:name="tv.danmaku.ijk.media.demo.FFMpegFileExplorer"
             android:label="@string/app_name" >
         </activity>
-        
-		 <activity
+        <activity
             android:name="tv.danmaku.ijk.media.app.activity.PortalActivity"
             android:label="@string/app_name" >
-     		 <intent-filter>
-     		    <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            </intent-filter>
         </activity>
-        
-		<activity
+        <activity
             android:name="tv.danmaku.ijk.media.app.activity.ChannelListActivity"
-            android:theme="@style/ActionBarTheme"
+            android:label=""
             android:logo="@drawable/titlebar_back"
-            android:label="">
-     		 <!-- 导航跳转到父Activity -->
+            android:theme="@style/ActionBarTheme" >
+
+            <!-- 导航跳转到父Activity -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="tv.danmaku.ijk.media.app.activity.PortalActivity" >
             </meta-data>
         </activity>
-        
-		<activity
+        <activity
             android:name="tv.danmaku.ijk.media.app.activity.MediaPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@style/FullscreenTheme">
+            android:theme="@style/FullscreenTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="video/*" />
@@ -82,30 +83,48 @@
                 <data android:scheme="file" />
             </intent-filter>
         </activity>
-        
+        <activity
+            android:name="tv.danmaku.ijk.media.app.activity.IpanelPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <data android:scheme="http" />
+                <data android:scheme="file" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="tv.danmaku.ijk.media.app.activity.SplashActivity"
             android:label="@string/app_name" >
- <!--     		 <intent-filter>
+
+            <!--
+          		 <intent-filter>
      		    <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter> -->
-    	</activity>
-    	
-       <activity
+             </intent-filter>
+            -->
+        </activity>
+        <activity
             android:name="tv.danmaku.ijk.media.app.activity.TVPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@style/FullscreenTheme">
-    	</activity>
-    	
-       <activity
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
             android:name="tv.danmaku.ijk.media.app.activity.NewsActivity"
-            android:theme="@style/ActionBarTheme"
+            android:label=""
             android:logo="@drawable/titlebar_back"
-            android:label="">
-     		 <!-- 导航跳转到父Activity -->
+            android:theme="@style/ActionBarTheme" >
+
+            <!-- 导航跳转到父Activity -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="tv.danmaku.ijk.media.app.activity.PortalActivity" >
