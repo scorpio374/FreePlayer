@@ -1,4 +1,4 @@
-package tv.danmaku.ijk.media.demo;
+package tv.danmaku.ijk.media.app.util;
 
 import java.io.File;
 

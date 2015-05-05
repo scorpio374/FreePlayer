@@ -1,6 +1,6 @@
 package tv.danmaku.ijk.media.app.fragment;
 
-import tv.danmaku.ijk.media.demo.FFMpegFileExplorer;
+import tv.danmaku.ijk.media.app.util.FFMpegFileExplorer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
